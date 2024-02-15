@@ -1,0 +1,13 @@
+.about {
+  min-height      : 80vh;
+  background-color: $blue;
+  color           : $white;
+
+  h2 {
+    color: $white;
+  }
+
+  &__text {
+    @include text-width;
+  }
+}

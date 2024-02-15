@@ -1,0 +1,27 @@
+$white     :#ffffff;
+$grey      :#E2E2E2;
+$black     :#050505;
+$blue      :#1D2031;
+$blue-light:#0016A3;
+
+
+
+$font-family-default: 'Rubik',
+sans-serif;
+$font-family-secondary: 'Roboto',
+sans-serif;
+$font-size-default: 16px;
+
+@mixin hovers {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin transition {
+  transition: all 0.4s ease;
+}
+
+@mixin text-width {
+  max-width: 800px;
+}

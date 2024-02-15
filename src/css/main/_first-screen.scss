@@ -1,0 +1,134 @@
+.first-screen {
+  min-height      : 100vh;
+  background-color: $grey;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  position        : relative;
+  height          : 100vh;
+
+  &__title {
+    @include text-width;
+  }
+}
+
+.first-screen .container {
+  min-height     : 100vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+}
+
+.first-screen-body {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  position       : sticky;
+  padding        : 10px;
+  width          : 100%;
+  top            : 0;
+  z-index        : 1000;
+  transition     : top 0.3s ease;
+
+  &.active {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    background-color: $grey;
+    box-shadow      : 0px 12px 18px -6px rgba($black, 0.3);
+  }
+
+  &__item {
+    @media (max-width: 550px) {
+      display    : flex;
+      align-items: center;
+    }
+  }
+}
+
+.first-screen-list {
+  display: flex;
+  @include transition;
+
+  @media (max-width: 768px) {
+    flex-wrap      : wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    padding : 5px 35px;
+    position: relative;
+    @include transition;
+
+
+    @media (max-width: 480px) {
+      padding: 5px 20px;
+    }
+
+    a {
+      display    : block;
+      font-size  : 18px;
+      font-weight: 500;
+      color      : $black;
+      @include transition;
+
+      @media (max-width: 480px) {
+        font-size: 16px;
+      }
+
+      &::before {
+        content         : '';
+        position        : absolute;
+        left            : 0;
+        right           : 0;
+        top             : 20px;
+        height          : 2px;
+        background-color: transparent;
+        @include transition;
+      }
+
+      &.active {
+        color: $blue-light;
+      }
+    }
+
+    @include hovers {
+      &:hover {
+        a {
+          color: $blue-light;
+
+          &::before {
+            top             : 100%;
+            background-color: $blue-light;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.first-screen-menu-logo {
+  position   : relative;
+  white-space: nowrap;
+  z-index    : 10;
+
+  a {
+    line-height: 100%;
+    font-family: $font-family-secondary;
+    color      : $black;
+    font-weight: 800;
+    @include transition;
+
+    span {
+      color: $blue-light;
+    }
+  }
+}
+
+.trap-element {
+  height    : 1px;
+  visibility: hidden;
+}
