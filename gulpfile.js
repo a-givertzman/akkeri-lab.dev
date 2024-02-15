@@ -13,7 +13,7 @@ const del = require('del')
 const browserSync = require('browser-sync').create()
 
 const clean = () => {
-  return del(['dist'])
+  return del(['docs'])
 }
 
 const normalise = () => {
@@ -23,13 +23,13 @@ const normalise = () => {
         level: 2,
       })
     )
-    .pipe(dest('dist/css'))
+    .pipe(dest('docs/css'))
 }
 
 const imagesDev = () => {
   return src(['src/img/**/*.*'])
     .pipe(image())
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
 }
 
 const styleDev = () => {
@@ -37,7 +37,7 @@ const styleDev = () => {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write('./'))
-    .pipe(dest('dist/css'))
+    .pipe(dest('docs/css'))
     .pipe(browserSync.stream())
 }
 
@@ -46,14 +46,14 @@ const scriptsDev = () => {
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(sourcemaps.write())
-    .pipe(dest('dist/js'))
+    .pipe(dest('docs/js'))
     .pipe(browserSync.stream())
 }
 
 const watchFilesDev = () => {
   browserSync.init({
     server: {
-      baseDir: 'dist',
+      baseDir: 'docs',
     },
   })
 }
@@ -61,7 +61,7 @@ const watchFilesDev = () => {
 const htmlDev = () => {
   return src(['src/**/*.html'])
     .pipe(fileInclude())
-    .pipe(dest('dist'))
+    .pipe(dest('docs'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
@@ -83,7 +83,7 @@ exports.dev = series(
 const imagesBuild = () => {
   return src(['src/img/**/*.*'])
     .pipe(image())
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
 }
 
 const styleBuild = () => {
@@ -101,16 +101,16 @@ const styleBuild = () => {
         level: 2,
       })
     )
-    .pipe(dest('dist/css'))
+    .pipe(dest('docs/css'))
 }
 const htmlMinifyBuild = () => {
-  return src('dist/**/*.html')
+  return src('docs/**/*.html')
     .pipe(
       htmlMin({
         collapseWhitespace: true,
       })
     )
-    .pipe(dest('dist'))
+    .pipe(dest('docs'))
 }
 
 const scriptsBuild = () => {
@@ -121,7 +121,7 @@ const scriptsBuild = () => {
         toplevel: true,
       }).on('error',notify.onError())
     )
-    .pipe(dest('dist/js'))
+    .pipe(dest('docs/js'))
 }
 
 exports.build = series(
