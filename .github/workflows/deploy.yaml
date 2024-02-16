@@ -10,9 +10,11 @@ jobs:
       # debug
       - name: Checkout sources
         run: |
-            echo ${{ secrets.FTP_SERVER }}
-            echo ${{ secrets.FTP_USERNAME }}
-            echo ${{ secrets.FTP_PASSWORD }}
+            echo test debug
+            echo "test debug"
+            echo "${{ secrets.FTP_SERVER }}"
+            echo "${{ secrets.FTP_USERNAME }}"
+            echo "${{ secrets.FTP_PASSWORD }}"
 
       # Here is the deployment action
       - name: Upload from public_html via FTP
