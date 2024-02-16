@@ -17,3 +17,4 @@ jobs:
           local_dir: "./docs"
           remote_dir: "/docs"
           delete: "true"
+          ftp_ssl_allow: "false"
