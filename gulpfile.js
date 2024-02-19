@@ -29,7 +29,7 @@ const normalise = () => {
 const imagesDev = () => {
   return src(['src/img/**/*.*'])
     .pipe(image())
-    .pipe(dest('docs/images'))
+    .pipe(dest('docs/img'))
 }
 
 const styleDev = () => {
@@ -83,7 +83,7 @@ exports.dev = series(
 const imagesBuild = () => {
   return src(['src/img/**/*.*'])
     .pipe(image())
-    .pipe(dest('docs/images'))
+    .pipe(dest('docs/img'))
 }
 
 const styleBuild = () => {
