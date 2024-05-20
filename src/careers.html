@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+"titlePage": "S&A lab | Главная",
+"description": "Мы - молодая команда инженеров и разработчиков, полных энтузиазма и любви к своему делу."
+})
+
+<main class="main">
+  <section class="first-screen light-section" id="first-screen">
+    <div class="container sticky-container">
+      <nav class="first-screen-body">
+        <div class="first-screen-menu-logo"><a href="#first-screen">S&A <span>lab</span></a></div>
+        <div class="first-screen-body__item ">
+          <ul class="first-screen-list">
+            <li class="first-screen-list__item">
+              <a href="/#about" class="first-screen-list__link">О нас</a>
+            </li>
+            <li class="first-screen-list__item">
+              <a href="/#activities" class="first-screen-list__link">Направления</a>
+            </li>
+            <li class="first-screen-list__item">
+              <a href="/#projects" class="first-screen-list__link">Проекты </a>
+            </li>
+            <li class="first-screen-list__item">
+              <a href="#careers" class="first-screen-list__link">Вакансии</a>
+            </li>
+            <li class="first-screen-list__item">
+              <a href="/#contacts" class="first-screen-list__link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <section class="careers light-section" id="careers">
+    <div class="container">
+      <h2>Вакансии</h2>
+      <p>
+        Вакансия Embedded developer
+
+        Позиция: Embedded developer / Программист микроконтроллеров
+        
+        Мы: Инженерный центр ООО ТКЗ в СПБ на Лиговском 150.
+        tkz-cranes.ru 
+        
+        Задачи
+        
+        У нас много интересных и сложных задач, и мы хотим решить их создавая свои устройства на базе программируемых микроконтроллеров.
+        
+        Что хотим уже сегодня начать реализовывать:
+        
+        - Измерение частот (0..30кГц) и уровней вибрации механизма на базе датчика ускорения и stm32
+        Отцифровать сигналы с датчиков и передать их по сети.
+        
+        - Радиопульт для дистанционного управления грузоподъемной техникой 
+        Получение и отображение информации с контроллера крана, получение команд от оператора и передача их контроллеру крана.
+        Стабильная передача данных, защита от помех.
+        
+        - Высокоточный инерциальный датчик положения на основе сенсоров ускорения и контроллера stm32. Нужно решить существующие проблемы подобных устройств.
+        
+        Знания и навыки
+        
+         - Изучать особенности и тонкости предметной области
+         - Подбирать элементную базу
+         - Проектировать принципиальные и монтажные схемы
+         - Писать простой чистый и понятный код
+         - Писать драйверы внешних устройств
+         - Решать сложные вопросы, используя stack overflow, github и другие ресурсы
+         - Дружить с паяльником и осциллографом
+
+        Здорово если:
+
+         - Ты хочешь рости и развиваться, любишь обучаться 
+         - Тебе хорошо знакомы: cortex-m, SPI, I2C, ADC, DMA, TCP, UDP, Git,
+        
+        Условия
+        
+        - Небольшой тёплый коллектив.
+        - Официальное трудоустройство.
+        - Работаем 5/2 в основном в офисе, но можно и удаленно.</p>
+    </div>
+  </section>
+</main>
+
+@@include('html/footer.html')
