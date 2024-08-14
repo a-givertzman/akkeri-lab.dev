@@ -1,19 +1,25 @@
-const { src,dest,series,watch,registry } = require('gulp')
-const concat = require('gulp-concat')
-const htmlMin = require('gulp-htmlmin')
-const autoprefixer = require('gulp-autoprefixer')
-const cleanCss = require('gulp-clean-css')
-const image = require('gulp-image')
-const fileInclude = require('gulp-file-include')
-const uglify = require('gulp-uglify-es').default
-const notify = require('gulp-notify')
-const sass = require('gulp-sass')(require('sass'))
-const sourcemaps = require('gulp-sourcemaps')
-const del = require('del')
-const browserSync = require('browser-sync').create()
+import gulp from 'gulp'
+const { src,dest,series,watch,registry } = gulp
+import concat from 'gulp-concat'
+import htmlMin from 'gulp-htmlmin'
+import autoprefixer from 'gulp-autoprefixer'
+import cleanCss from 'gulp-clean-css'
+import image from 'gulp-image'
+import fileInclude from 'gulp-file-include'
+import uglify from 'gulp-uglify'
+import notify from 'gulp-notify'
+
+import dartSass from 'sass'
+import gulpSass from 'gulp-sass'
+const sass = gulpSass(dartSass)
+
+import sourcemaps from 'gulp-sourcemaps'
+import {deleteAsync} from 'del'
+import browserSync from 'browser-sync'  //).create()
 
 const clean = () => {
-  return del(['docs'])
+  return deleteAsync(['docs'])
+  // return del(['docs'])
 }
 
 const normalise = () => {
@@ -70,7 +76,7 @@ watch('src/css/**/*.scss',styleDev)
 watch('src/js/**/*.js',scriptsDev)
 
 
-exports.dev = series(
+export const dev = series(
   clean,
   scriptsDev,
   normalise,
@@ -124,7 +130,7 @@ const scriptsBuild = () => {
     .pipe(dest('docs/js'))
 }
 
-exports.build = series(
+export const build = series(
   clean,
   scriptsBuild,
   normalise,

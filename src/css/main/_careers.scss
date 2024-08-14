@@ -1,4 +1,8 @@
 .careers {
   min-height      : 80vh;
   background-color: $grey;
+  .careers-item {
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
 }
