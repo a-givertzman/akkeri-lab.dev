@@ -30,15 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function adjustFontSize() {
     const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let fontSizePercentage = 19.5;
+    let imageSizePercentage = 19.5;
       let scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
-        fontSizePercentage = 12;
+        imageSizePercentage = 15;
       } else {
-        fontSizePercentage = 19.5;
+        imageSizePercentage = 50;
       }
-      let fontSize = (parentWidth * fontSizePercentage) / 100;
-      document.querySelector(".first-screen-menu-logo a").style.fontSize = fontSize + 'px';
+      let imageSize = (parentWidth * imageSizePercentage) / 100;
+      document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
     }
   adjustFontSize();
   window.addEventListener('resize', function () {

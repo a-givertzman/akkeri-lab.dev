@@ -31,15 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function adjustFontSize() {
     const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let fontSizePercentage = 19.5;
+    let imageSizePercentage = 19.5;
       let scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
-        fontSizePercentage = 12;
+        imageSizePercentage = 12;
       } else {
-        fontSizePercentage = 19.5;
+        imageSizePercentage = 19.5;
       }
-      let fontSize = (parentWidth * fontSizePercentage) / 100;
-      document.querySelector(".first-screen-menu-logo a").style.fontSize = fontSize + 'px';
+      let fontSize = (parentWidth * imageSizePercentage) / 100;
+      document.querySelector(".first-screen-menu-logo a img").style.width = fontSize + 'px';
     }
   adjustFontSize();
   window.addEventListener('resize', function () {

@@ -558,15 +558,8 @@ footer h2 {
   white-space: nowrap;
   z-index: 10;
 }
-.first-screen-menu-logo a {
-  line-height: 100%;
-  font-family: "Roboto", sans-serif;
-  color: #050505;
-  font-weight: 800;
+.first-screen-menu-logo a img {
   transition: all 0.4s ease;
-}
-.first-screen-menu-logo a span {
-  color: #0016A3;
 }
 
 .trap-element {
