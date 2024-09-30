@@ -7,7 +7,8 @@
 
 <main class="main">
   @@include('html/header-section.html', {
-    "indexRoute": "index.html"
+    "indexRoute": "index.html",
+    "careersRoute": "careers.html"
   })
   <section class="careers light-section" id="careers">
     <div class="container">
@@ -205,4 +206,7 @@
   </section>
 </main>
 
-@@include('html/footer.html')
+@@include('html/footer.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html"
+})
