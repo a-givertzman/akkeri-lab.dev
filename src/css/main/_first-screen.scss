@@ -117,7 +117,9 @@
 
   a img {
     @include transition;
+    width: 80px; // initial image width
   }
+  
 }
 
 .trap-element {
