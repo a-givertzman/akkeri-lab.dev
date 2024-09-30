@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function adjustFontSize() {
     const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let imageSizePercentage = 19.5;
+    let imageSizePercentage = 15.5;
       let scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
-        imageSizePercentage = 15;
+        imageSizePercentage = 15.5;
       } else {
         imageSizePercentage = 50;
       }
