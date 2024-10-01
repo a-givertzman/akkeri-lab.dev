@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+"titlePage": "S&A lab | Главная",
+"description": "Мы - молодая команда инженеров и разработчиков, полных энтузиазма и любви к своему делу."
+})
+
+<main class="project main">
+  @@include('html/header-section.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html"
+  })
+  <section class="project light-section" id="project__overview">
+    <div class="container">
+      <h2 data-aos="fade-up">Система контроля остойчивости и прочности</h2>
+      <div data-aos="fade-up">Наш программный продукт – это надежный помощник экипажу судна и
+        техническим инженерам флота. Программа предназначена для составления грузового плана, расчетов посадки,
+        остойчивости и прочности судна.
+        Она позволяет:
+        <li class="padded"><strong>Принять взвешенные решения.</strong> Наглядная визуализация
+          результатов
+          расчетов помогает
+          быстро оценить текущее состояние судна и принять оптимальные решения.</li>
+        <li class="padded"><strong>Работать с широким спектром судов</strong>, от небольших судов до
+          супертанкеров и
+          гарантирует полное соответствие всем требованиям РМРС и РКО, обеспечивая безопасность судна и
+          груза.</li>
+        <li class="padded"><strong>Сэкономить время и ресурсы.</strong> Автоматизация рутинных расчетов
+          позволяет высвободить
+          время специалистов для решения более важных задач.</li>
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__stability">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Остойчивость</h3>
+        <div>Автоматический выбор, расчет и визуализация критериев остойчивости судна, учитывая его
+          текущую загрузку и конструктивные особенности.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/project-sss-stability.jpg" alt="stability" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__cargo-plan">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Грузовой план</h3>
+        <div>Создание детальных грузовых планов с учетом специфики различных типов грузов: жидких,
+          сыпучих, генеральных и контейнеров. Автоматический расчет параметров секций трюма и цистерн оптимизируют
+          процесс планирования.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/project-sss-cargo.jpg" alt="cargo plan" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__strength">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Прочность</h3>
+        <div>Автоматический расчет и визуализация эпюр изгибающих моментов и перерезывающих сил. C
+          учетом допустимых значений, позволяет оценить прочность корпуса судна в режиме реального времени.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/project-sss-strength.jpg" alt="strength" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__draft">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Посадка</h3>
+        <div>Определение посадки судна и сравнение с требованиями международной конвенции (МК) о
+          грузовой марке обеспечит высокий уровень безопасности мореплавания. Определение водоизмещения судна по
+          текущим осадкам позволяет оперативно отслеживать проведение погрузочных операций.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/project-sss-draft.jpg" alt="draft" class="project__img">
+      </div>
+    </div>
+  </section>
+</main>
+
+@@include('html/footer.html', {
+"indexRoute": "index.html",
+"careersRoute": "careers.html"
+})

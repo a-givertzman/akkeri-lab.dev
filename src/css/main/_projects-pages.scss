@@ -1,0 +1,65 @@
+.project {
+    &.light-section {
+        background-color: $grey;
+    }
+
+    &.details-section {
+
+        &:nth-child(2n) {
+            background-color: $grey;
+            color: $black;
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+
+                .project__img-wrapper {
+                    grid-column: span 2;
+                }
+
+                @media (max-width: 1024px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &:nth-child(2n+1) {
+            background-color: $blue;
+            color: $white;
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: inherit;
+            }
+
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+
+                .project__img-wrapper {
+                    order: -1;
+                    grid-column: span 2;
+                }
+
+                @media (max-width: 1024px) {
+                    display: flex;
+                    flex-direction: column;
+
+                    .project__img-wrapper {
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.project__img-wrapper img {
+    object-fit: contain;
+}

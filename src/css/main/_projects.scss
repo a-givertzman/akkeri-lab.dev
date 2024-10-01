@@ -1,6 +1,6 @@
 .projects {
   background-color: $blue;
-  color           : $white;
+  color: $white;
 
   h2 {
     color: $white;
@@ -35,6 +35,29 @@
     }
   }
 
+  &__link {
+    display    : block;
+    font-weight: 800;
+    color      : inherit;
+    @include transition;
+  }
+
+  &__item {
+    display       : flex;
+    flex-direction: column;
+
+
+    .projects__link:last-child {
+      margin-top           : auto;
+      padding-top          : 30px;
+      font-size            : 1.5rem;
+      // Underline decoration
+      text-decoration-style: wavy;
+      text-decoration-line : underline;
+      text-underline-offset: 4px;
+    }
+  }
+
   // Alternating the colors of the cards
   &__item {
     background-color: $blue-light;
@@ -48,7 +71,6 @@
         grid-column: span 1;
       }
     }
-    
     @media (max-width: 1024px) {
       &:nth-child(odd) {
         background-color: $white;
