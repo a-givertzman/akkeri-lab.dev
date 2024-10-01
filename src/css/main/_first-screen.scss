@@ -117,9 +117,11 @@
 
   a img {
     @include transition;
-    width: 80px; // initial image width
+    width          : 80px; // initial image width
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
   }
-  
 }
 
 .trap-element {
