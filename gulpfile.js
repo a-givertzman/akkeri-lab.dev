@@ -1,5 +1,5 @@
 import gulp from 'gulp'
-const { src,dest,series,watch,registry } = gulp
+const { src, dest, series, watch, registry } = gulp
 import concat from 'gulp-concat'
 import htmlMin from 'gulp-htmlmin'
 import autoprefixer from 'gulp-autoprefixer'
@@ -14,7 +14,7 @@ import gulpSass from 'gulp-sass'
 const sass = gulpSass(dartSass)
 
 import sourcemaps from 'gulp-sourcemaps'
-import {deleteAsync} from 'del'
+import { deleteAsync } from 'del'
 import browserSync from 'browser-sync'  //).create()
 
 const clean = () => {
@@ -33,7 +33,7 @@ const normalise = () => {
 }
 
 const imagesDev = () => {
-  return src(['src/img/**/*.*'])
+  return src(['src/img/**/*.*'], { encoding: false })
     .pipe(image())
     .pipe(dest('docs/img'))
 }
@@ -72,8 +72,8 @@ const htmlDev = () => {
 }
 
 watch('src/**/*.html', htmlDev);
-watch('src/css/**/*.scss',styleDev)
-watch('src/js/**/*.js',scriptsDev)
+watch('src/css/**/*.scss', styleDev)
+watch('src/js/**/*.js', scriptsDev)
 
 
 export const dev = series(
@@ -87,7 +87,7 @@ export const dev = series(
 )
 
 const imagesBuild = () => {
-  return src(['src/img/**/*.*'])
+  return src(['src/img/**/*.*'], { encoding: false })
     .pipe(image())
     .pipe(dest('docs/img'))
 }
@@ -125,7 +125,7 @@ const scriptsBuild = () => {
     .pipe(
       uglify({
         toplevel: true,
-      }).on('error',notify.onError())
+      }).on('error', notify.onError())
     )
     .pipe(dest('docs/js'))
 }
