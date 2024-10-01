@@ -35,39 +35,25 @@
     }
   }
 
-  &__item:nth-child(1) {
-    grid-row        : 1;
-    grid-column     : span 1;
-    background-color: $white;
-    color           : $black;
-  }
-
-  &__item:nth-child(2) {
-    grid-row        : 1;
-    grid-column     : span 2;
+  // Alternating the colors of the cards
+  &__item {
     background-color: $blue-light;
-    color           : $white;
-  }
+    color: $white;
+    grid-column: span 2;
 
-  &__item:nth-child(3) {
-    grid-row        : 2;
-    grid-column     : span 2;
-    background-color: $blue-light;
-    color           : $white;
-
-    @media (max-width: 1024px) {
-      order: 4;
+    @media (min-width: 1025px) {
+      &:nth-child(4n-3), &:nth-child(4n) {
+        background-color: $white;
+        color: $black;
+        grid-column: span 1;
+      }
     }
-  }
-
-  &__item:nth-child(4) {
-    grid-row        : 2;
-    grid-column     : span 1;
-    background-color: $white;
-    color           : $black;
-
+    
     @media (max-width: 1024px) {
-      order: 3;
+      &:nth-child(odd) {
+        background-color: $white;
+        color: $black;
+      }
     }
   }
 }
