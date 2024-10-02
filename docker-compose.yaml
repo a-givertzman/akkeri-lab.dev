@@ -1,0 +1,12 @@
+
+services:
+  akkeri-site-app:
+    build: .
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - ./src/:/app/src
+      - ./gulpfile.js/:/app/gulpfile.js
+    command: gulp dev
+  

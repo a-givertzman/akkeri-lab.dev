@@ -6,32 +6,10 @@
 })
 
 <main class="main">
-  <section class="first-screen light-section" id="first-screen">
-    <div class="container sticky-container">
-      <nav class="first-screen-body">
-        <div class="first-screen-menu-logo"><a href="#first-screen">S&A <span>lab</span></a></div>
-        <div class="first-screen-body__item ">
-          <ul class="first-screen-list">
-            <li class="first-screen-list__item">
-              <a href="/#about" class="first-screen-list__link">О нас</a>
-            </li>
-            <li class="first-screen-list__item">
-              <a href="/#activities" class="first-screen-list__link">Направления</a>
-            </li>
-            <li class="first-screen-list__item">
-              <a href="/#projects" class="first-screen-list__link">Проекты </a>
-            </li>
-            <li class="first-screen-list__item">
-              <a href="#careers" class="first-screen-list__link">Вакансии</a>
-            </li>
-            <li class="first-screen-list__item">
-              <a href="/#contacts" class="first-screen-list__link">Контакты</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </section>
+  @@include('html/header-section.html', {
+    "indexRoute": "index.html",
+    "careersRoute": "careers.html"
+  })
   <section class="careers light-section" id="careers">
     <div class="container">
       <h2>Вакансии</h2>
@@ -84,7 +62,7 @@
           <li>Изучать особенности и тонкости предметной области</li>
           <li>Писать простой, чистый и понятный код</li>
           <li>Знать, любить и уважать принципы ООП</li>
-          <li>Любить писать юниттесты</li>
+          <li>Любить писать юнит-тесты</li>
           <li>Любить писать осмысленные комменты и описания к своим детищам</li>
           <li>Иногда писать несложные SQL и shell-скрипты</li>
           <li>Самостоятельно решать возникающие, порой сложные, вопросы, используя stack overflow, github и другие ресурсы</li>
@@ -122,7 +100,7 @@
           <li>Изучать особенности и тонкости предметной области</li>
           <li>Писать простой, чистый и понятный код</li>
           <li>Знать, любить и уважать принципы ООП</li>
-          <li>Любить писать юниттесты</li>
+          <li>Любить писать юнит-тесты</li>
           <li>Любить писать осмысленные комменты и описания к своим детищам</li>
           <li>Иногда писать несложные SQL и shell-скрипты</li>
           <li>Самостоятельно решать возникающие, порой сложные, вопросы, используя stack overflow, github и другие ресурсы</li>
@@ -228,4 +206,7 @@
   </section>
 </main>
 
-@@include('html/footer.html')
+@@include('html/footer.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html"
+})

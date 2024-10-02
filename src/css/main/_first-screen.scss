@@ -115,16 +115,12 @@
   white-space: nowrap;
   z-index    : 10;
 
-  a {
-    line-height: 100%;
-    font-family: $font-family-secondary;
-    color      : $black;
-    font-weight: 800;
+  a img {
     @include transition;
-
-    span {
-      color: $blue-light;
-    }
+    width          : 80px; // initial image width
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
   }
 }
 
