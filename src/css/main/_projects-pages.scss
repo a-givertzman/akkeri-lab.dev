@@ -3,6 +3,20 @@
         background-color: $grey;
     }
 
+    &__in-dev-chip {
+        font-size: 1.0rem;
+        line-height: 100%;
+        vertical-align: middle;
+        background-color: $blue-light;
+        color: $white;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
+    &__img-wrapper img {
+        object-fit: contain;
+    }
+
     &.details-section {
 
         &:nth-child(2n) {
@@ -58,8 +72,4 @@
             }
         }
     }
-}
-
-.project__img-wrapper img {
-    object-fit: contain;
 }
