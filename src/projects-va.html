@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+"titlePage": "S&A lab | Виброаналитика",
+"description": "Приложение для диагностики промышленного оборудования"
+})
+
+<main class="project main">
+  @@include('html/header-section.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html"
+  })
+  <section class="project light-section" id="project__overview">
+    <div class="container">
+      <h2 data-aos="fade-up">Приложение для диагностики промышленного оборудования <span class="project__in-dev-chip">в
+          разработке</span></h2>
+      <div data-aos="fade-up">Оптимизируйте работу вашего предприятия с помощью нашего решения для
+        диагностики оборудования. Повысьте эффективность использования ресурсов и снизьте риски незапланированных
+        простоев. Наше приложение предоставляет:
+        <li class="padded"><strong>Диагностику</strong>, позволяющую предвидеть и предотвращать
+          возникновение проблем.</li>
+        <li class="padded"><strong>Оптимизацию плановых ремонтов</strong>, основанную на прогнозах остаточного ресурса
+          оборудования.
+        </li>
+        <li class="padded"><strong>Уменьшение затрат на эксплуатацию</strong> за счет предотвращения аварий и простоев.
+        </li>
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__stability">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <div>Система собирает данные с различных типов датчиков, включая датчики температуры, вибрации и акустики, а
+          также интегрируется с промышленными контроллерами. Собранные данные обрабатываются с использованием
+          алгоритмов, разработанных нашей командой.</div>
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__stability">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Мониторинг и визуализация</h3>
+        <div>Получите наглядное представление о функционировании системы с помощью интерактивной трехмерной
+          визуализации,
+          отображающей текущий статус каждого компонента.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-va-3d.png" alt="3d view" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__stability">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Детальное представление</h3>
+        <div>Интерактивная система позволяет погрузиться в детали работы оборудования. Просто кликните на интересующем
+          устройстве, чтобы получить подробную информацию о его состоянии и характеристиках. Вы можете как изучать
+          каждое
+          устройство в деталях, так и использовать древовидное представление для быстрого обзора всей системы.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-va-other-views.png" alt="3d view" class="project__img">
+      </div>
+    </div>
+  </section>
+</main>
+@@include('html/footer.html', {
+"indexRoute": "index.html",
+"careersRoute": "careers.html"
+})

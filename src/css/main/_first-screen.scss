@@ -10,6 +10,37 @@
   &__title {
     @include text-width;
   }
+
+  &__spacer {
+    flex-grow: 1;
+  }
+
+  &__theses {
+    padding-bottom : 64px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: flex-end;
+
+    font-weight    : 500;
+    font-size      : 1.5rem;
+    text-align     : right;
+
+    opacity        : 1.0;
+    @include transition;
+
+    &.hide {
+      opacity: 0;
+    }
+
+    li {
+      margin       : 10px 5px;
+      line-height  : 1.0;
+
+      &:first-of-type {
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 .first-screen .container {
