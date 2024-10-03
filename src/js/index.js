@@ -19,27 +19,27 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       const elementClick = this.getAttribute('href');
       const destination = document.querySelector(elementClick).offsetTop - document.querySelector('.first-screen-body').offsetHeight;
-      setTimeout(function() {
+      setTimeout(function () {
         window.scrollTo({
           top: destination,
           behavior: 'smooth'
         });
       }, 50);
+    });
   });
-});
 
   function adjustFontSize() {
     const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
     let imageSizePercentage = 15.5;
-      let scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        imageSizePercentage = 15.5;
-      } else {
-        imageSizePercentage = 50;
-      }
-      let imageSize = (parentWidth * imageSizePercentage) / 100;
-      document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > 0) {
+      imageSizePercentage = 15.5;
+    } else {
+      imageSizePercentage = 50;
     }
+    let imageSize = (parentWidth * imageSizePercentage) / 100;
+    document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
+  }
   adjustFontSize();
   window.addEventListener('resize', function () {
     adjustFontSize();
@@ -48,16 +48,19 @@ document.addEventListener('DOMContentLoaded', function () {
     adjustFontSize();
   });
   const objToStick = document.querySelector(".first-screen-body");
+  const objToHide = document.querySelector(".first-screen__theses");
   if (objToStick) {
     let topOfObjToStick = objToStick.offsetTop;
-      window.addEventListener("scroll", function () {
-        let windowScroll = window.scrollY || window.pageYOffset;
-          if (windowScroll > topOfObjToStick) {
-              objToStick.classList.add("active");
-          } else {
-              objToStick.classList.remove("active");
-          }
-      });
+    window.addEventListener("scroll", function () {
+      let windowScroll = window.scrollY || window.pageYOffset;
+      if (windowScroll > topOfObjToStick) {
+        objToStick.classList.add("active");
+        objToHide && objToHide.classList.add("hide");
+      } else {
+        objToStick.classList.remove("active");
+        objToHide && objToHide.classList.remove("hide");
+      }
+    });
   }
 });
 
