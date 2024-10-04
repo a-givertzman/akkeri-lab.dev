@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+"titlePage": "S&A lab | Мониторинг крана",
+"description": "Программное обеспечение для мониторинга состояния грузоподъемных механизмов"
+})
+
+<main class="project main">
+  @@include('html/header-section.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html",
+  "contactsRoute": "contacts.html"
+  })
+  <section class="project light-section" id="project__overview">
+    <div class="container">
+      <h2 data-aos="fade-up">Система мониторинга грузоподъемных механизмов</h2>
+      <div data-aos="fade-up">Программное обеспечение позволяет отслеживать текущие рабочие параметры оборудования крана. 
+        Помогает оператору в быстрой оценке технического состояния и готовности к работе. 
+        Также облегчает поиск и анализ неисправностей.
+        Области применения:
+        <li class="padded">Промышленные грузоподъемные механизмы;</li>
+        <li class="padded">Грузоподъемные механизмы грузовых судов.</li>
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__help">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Помощь оператору</h3>
+        <div>На главном экране отображаются статусы основных систем и характеристики перемещения крана. 
+            Оператор может легко переключать режимы работы. На диаграмме указаны ограничения на перемещение при разных уровнях нагрузки и текущее положение крюка. Следуя этой диаграмме оператор обеспечивает безопасность процесса перемещения грузов.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-home.png" alt="home" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__monitoring">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Состояния агрегатов</h3>
+        <div>При работе крана можно в реальном времени наблюдать состояние его ключевых компонентов. 
+            Благодаря этому механизму оператор всегда в курсе происходящего и может перемещать грузы с учётом состояний определённых агрегатов, а также заранее запланировать их техническое обслуживание.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-winch.png" alt="winch" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__alarm">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Отслеживание аварий</h3>
+        <div>Если какой-либо сигнал достигает аварийных значений, в список аварий добавляется запись об этом.
+            После устранения неполадки необходимо вручную подтвердить этот факт в приложении - так же, как это происходит во многих системах управления.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-alarm.png" alt="alarm" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__event">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Архив событий</h3>
+        <div>Сохраняет каждое новое значение сигналов, отмеченных для отслеживания. 
+            Это даёт возможность быстро найти причину поломки, а также оценить наработку крана или его отдельных компонентов.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-event.png" alt="event" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__settings">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Уставки</h3>
+        <div>На данном экране отображаются текущие значения уставок для каждого из агрегатов. 
+            Инженер с соответствующими правами доступа может изменять эти значения. 
+            Полезно как в наладке, так и при эксплуатации.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-settings.png" alt="settings" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__auth">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Авторизация</h3>
+        <div>К учётным записям привязаны роли, с помощью которых осуществляется контроль доступа к элементам мониторинга и управления. Присутствует возможность скрывать целые экраны от определённых групп пользователей.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-login.png" alt="login" class="project__img">
+      </div>
+    </div>
+  </section>
+  <section class="project details-section light-section" id="project__compensation">
+    <div class="container">
+      <div class="project__description" data-aos="fade-up">
+        <h3>Компенсация качки</h3>
+        <div>Приложение позволяет в реальном времени отслеживать работу алгоритма компенсации качки: то, как контроллер изменяет скорость крюка в зависимости от физического положения крана в пространстве. Данный функционал применяется преимущественно к судовым кранам.</div>
+      </div>
+      <div class="project__img-wrapper">
+        <img src="../img/projects-cma-compensation.png" alt="compensation" class="project__img">
+      </div>
+    </div>
+  </section>
+</main>
+
+@@include('html/footer.html', {
+"indexRoute": "index.html",
+"careersRoute": "careers.html"
+})
