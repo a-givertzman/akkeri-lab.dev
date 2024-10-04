@@ -1,0 +1,16 @@
+.contacts {
+    .container {
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    &__text-data {
+        a {
+            display: inline-block;
+        }
+    }
+}

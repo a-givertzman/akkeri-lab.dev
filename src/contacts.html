@@ -2,7 +2,7 @@
 <html lang="ru">
 @@include('html/head.html',{
 "titlePage": "S&A lab | Контакты",
-"description": "Программное обеспечение для мониторинга состояния грузоподъемных механизмов"
+"description": "S&A lab, контакты, контактная информация"
 })
 
 <main class="project main">
@@ -11,39 +11,57 @@
   "careersRoute": "careers.html",
   "contactsRoute": "contacts.html"
   })
-  <section id="contacts" class="about light-section">
+  <section id="contacts" class="contacts about light-section">
     <div class="container">
-      <h2 data-aos="fade-up">Контакты</h2>
-      <div data-aos="fade-up" itemscope itemtype="http://schema.org/LocalBusiness">
-        <ul>
-          <li><strong  itemprop="name">ООО "ЭС ЭНД ЭЙ ЛАБ"</strong></li>
-          <li itemprop="founder" itemscope itemtype="http://schema.org/Person">
-            <strong>Генеральный Директор</strong>: <span itemprop="familyName">Сушенцов</span> <span itemprop="givenName">Андрей</span> <span>Александрович</span>
-          </li>
-          <li><strong>Телефон</strong>: <a id="company-tel" href="tel:+79253329723" itemprop="telephone">+7 925 332 97 23</a></li>
-          <li><strong>Email</strong>: <a id="company-email" href="mailto:info@sa-lab.dev" itemprop="email">info@sa-lab.dev</a></li>
-          <li><strong>Telegram</strong>: <a href="https://t.me/Sa_lab">@Sa_lab</a></li>
-          <li><strong>Адрес</strong>: <span itemprop="postalCode">192007</span>, <span itemprop="addressLocality">г. Санкт-Петербург</span>, вн.тер. г. Муниципальный Округ Волковское, пр-кт Лиговский,
-            <span itemprop="streetAddress"></span>
-            дом 150, литера А, офис 612, помещение 27Н</li>
-        </ul>
-        <br>
-        <ul>
-          <li><strong>ИНН</strong>: 7816747424</li>
-          <li><strong>КПП</strong>: 781601001</li>
-          <li><strong>ОГРН</strong>: 1247800011360</li>
-        </ul>
-        <br>
-        <ul>
-          <li><strong>Расчетный счет</strong>: 40702810420000093434</li>
-          <li><strong>Банк</strong>: ООО "Банк Точка"</li>
-          <li><strong>БИК</strong>: 044525104</li>
-          <li><strong>Корр. счет</strong>: 30101810745374525104</li>
-        </ul>
-        <br>
+      <div class="contacts__text-data">
+        <h2 data-aos="fade-up">Контакты</h2>
+        <div data-aos="fade-up" itemscope itemtype="http://schema.org/Organization">
+          <ul>
+            <li><strong itemprop="name">ООО "ЭС ЭНД ЭЙ ЛАБ"</strong></li>
+            <li itemprop="founder" itemscope itemtype="http://schema.org/Person">
+              <strong>Генеральный Директор</strong>:
+              <span itemprop="familyName">Сушенцов</span>
+              <span itemprop="givenName">Андрей</span>
+              <span>Александрович</span>
+            </li>
+            <li><strong>Телефон</strong>:
+              <a id="company-tel" href="tel:+79253329723" itemprop="telephone">+7 925 332 9723</a>
+            </li>
+            <li><strong>Email</strong>:
+              <a id="company-email" href="mailto:info@sa-lab.dev" itemprop="email">info@sa-lab.dev</a>
+            </li>
+            <li><strong>Telegram</strong>:
+              <a href="https://t.me/Sa_lab">@Sa_lab</a>
+            </li>
+            <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><strong>Адрес</strong>:
+              <span itemprop="postalCode">192007</span>,
+              <span itemprop="addressLocality">г. Санкт-Петербург</span>, вн.тер. г. Муниципальный Округ Волковское,
+              пр-кт
+              Лиговский,
+              <span itemprop="streetAddress">дом 150, литера А, офис 612, помещение 27Н</span>
+            </li>
+          </ul>
+          <br class="contacts__divider">
+          <ul>
+            <li><strong>ИНН</strong>: <span itemprop="taxID">7816747424</span></li>
+            <li><strong>КПП</strong>: <span itemprop="vatID"> 781601001</span></li>
+            <li><strong>ОГРН</strong>: 1247800011360</li>
+          </ul>
+          <br class="contacts__divider">
+          <ul>
+            <li><strong>Расчетный счет</strong>: 40702810420000093434</li>
+            <li><strong>Банк</strong>: ООО "Банк Точка"</li>
+            <li><strong>БИК</strong>: 044525104</li>
+            <li><strong>Корр. счет</strong>: 30101810745374525104</li>
+          </ul>
+        </div>
       </div>
-       <iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=30.350211%2C59.912937&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQxNjM5NhJV0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JvQuNCz0L7QstGB0LrQuNC5INC_0YDQvtGB0L_QtdC60YIsIDE1MCIKDTnN8kEV2aZvQg%2C%2C&z=16.69" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
-    </div>
+      <div class="contacts__map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=30.350211%2C59.912937&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQxNjM5NhJV0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JvQuNCz0L7QstGB0LrQuNC5INC_0YDQvtGB0L_QtdC60YIsIDE1MCIKDTnN8kEV2aZvQg%2C%2C&z=16.69"
+          width="560" height="400" frameborder="1" allowfullscreen="true">
+        </iframe>
+      </div>
   </section>
 </main>
 
