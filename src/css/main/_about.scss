@@ -10,4 +10,15 @@
   &__text {
     @include text-width;
   }
+
+  &__description-list {
+    dt {
+      display: list-item;
+      font-weight: bold;
+    }
+    dd {
+      margin: 0;
+      padding: 0 0 0.5em 0;
+    }
+  }
 }
