@@ -72,4 +72,12 @@
             }
         }
     }
+    &__contact-us {
+        display: inline;
+        font-size            : 1.3rem;
+        text-decoration-style: wavy;
+        text-decoration-line : underline;
+        text-underline-offset: 4px;
+        color: $blue-light;
+    }
 }
