@@ -13,4 +13,16 @@
             display: inline-block;
         }
     }
+
+    &__map {
+        iframe {
+            display: inline-block;
+            width: 560px;
+            height: 400px;
+
+            @media (max-width: 728px) {
+                width: 100%;
+            }
+        }
+    }
 }
