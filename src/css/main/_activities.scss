@@ -57,4 +57,13 @@
     grid-column: span 3;
     min-height : 150px;
   }
+
+  &__implemented a {
+    display: inline;
+    font-size            : 1rem;
+    text-decoration-style: wavy;
+    text-decoration-line : underline;
+    text-underline-offset: 4px;
+    color: $blue-light;
+  }
 }

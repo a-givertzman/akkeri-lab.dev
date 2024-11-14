@@ -38,6 +38,11 @@ const imagesDev = () => {
     .pipe(dest('docs/img'))
 }
 
+const filesDev = () => {
+  return src(['src/files/*.*'], { encoding: false })
+  .pipe(dest('docs/files'))
+}
+
 const styleDev = () => {
   return src('src/css/**/*.scss')
     .pipe(sourcemaps.init())
@@ -82,14 +87,22 @@ export const dev = series(
   normalise,
   styleDev,
   imagesDev,
+  filesDev,
   htmlDev,
   watchFilesDev
 )
+
+
 
 const imagesBuild = () => {
   return src(['src/img/**/*.*'], { encoding: false })
     .pipe(image())
     .pipe(dest('docs/img'))
+}
+
+const filesBuild = () => {
+  return src(['src/files/*.*'], { encoding: false })
+  .pipe(dest('docs/files'))
 }
 
 const styleBuild = () => {
@@ -136,6 +149,7 @@ export const build = series(
   normalise,
   styleBuild,
   imagesBuild,
+  filesBuild,
   htmlDev,
   htmlMinifyBuild
 )
