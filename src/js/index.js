@@ -28,19 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function adjustFontSize() {
-    const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let imageSizePercentage = 15.5;
-    let scrollPosition = window.scrollY;
-    if (scrollPosition > 0) {
-      imageSizePercentage = 15.5;
-    } else {
-      imageSizePercentage = 50;
-    }
-    let imageSize = (parentWidth * imageSizePercentage) / 100;
-    document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
-  }
-  adjustFontSize();
+  // function adjustFontSize() {
+  //   const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
+  //   let imageSizePercentage = 15.5;
+  //   let scrollPosition = window.scrollY;
+  //   if (scrollPosition > 0) {
+  //     imageSizePercentage = 15.5;
+  //   } else {
+  //     imageSizePercentage = 60;
+  //   }
+  //   let imageSize = (parentWidth * imageSizePercentage) / 100;
+  //   document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
+  // }
+  // adjustFontSize();
   window.addEventListener('resize', function () {
     adjustFontSize();
   });
