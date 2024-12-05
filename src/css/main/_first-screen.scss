@@ -1,28 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
 
 .first-screen {
-  background: linear-gradient(90deg, #d9d9d9 10%, #e2e2e2 50%, #d9d9d9 90%);
-  display: flex;
+  background    : linear-gradient(90deg, $grey-dark 10%, $grey 50%, $grey-dark 90%);
+  display       : flex;
   flex-direction: column;
-  position: relative;
+  position      : relative;
 
   &__theses {
-    width: 752px;
-    margin: 83px 0 0;
+    width      : 752px;
+    margin     : 83px 0 0;
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
-    font-size: 64px;
+    font-size  : 64px;
     line-height: 95px;
-    color: #000000;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    opacity: 1;
+    color      : $black;
+    text-shadow: 0 4px 4px rgba($black, 0.25);
+    opacity    : 1;
 
     &.hide {
       opacity: 0;
     }
 
     li {
-      margin: 10px 5px;
+      margin     : 10px 5px;
       line-height: 1.0;
 
       &:first-of-type {
@@ -36,63 +36,66 @@
   }
 
   &__contact-us {
-    font-size: 1.5rem;
-    line-height: 100%;
-    display: inline-block;
-    background-color: #2C6DB2;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 6px;
+    font-size       : 1.5rem;
+    line-height     : 100%;
+    display         : inline-block;
+    background-color: $blue-light;
+    color           : $white;
+    padding         : 8px 16px;
+    border-radius   : 6px;
   }
 }
 
 .first-screen .container {
-  display: flex;
+  display       : flex;
   flex-direction: column;
 }
 
 .first-screen-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: sticky;
-  padding: 10px;
-  margin-bottom: 98px;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: top 0.3s ease;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  flex-direction  : column;
+  position        : sticky;
+  padding         : 20px;
+  margin-bottom   : 98px;
+  width           : 100%;
+  top             : 0;
+  z-index         : 1000;
+  background-color: transparent;
+  transform       : translateY(-20px);
+  transition      : background-color 0.3s ease-in-out, transform 0.5s ease;
 
   &__item {
-    display: flex;
-    align-items: center;
+    display        : flex;
+    align-items    : center;
     justify-content: space-between;
-    margin-bottom: 154px;
+    margin-bottom  : 154px;
 
     @media (max-width: 550px) {
-      display: flex;
+      display    : flex;
       align-items: center;
     }
   }
 
   &.active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
     background-color: $grey;
-    box-shadow: 0 12px 18px -6px rgba($black, 0.3);
+    box-shadow      : 0 12px 18px -6px rgba($black, 0.3);
+    transform       : translateY(0);
   }
 }
 
 .first-screen-list {
   display: flex;
-  gap: 24px;
+  gap    : 24px;
   @include transition;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap;
+    flex-wrap      : wrap;
     justify-content: center;
   }
 
@@ -101,11 +104,11 @@
     @include transition;
 
     .first-screen-list__link {
-      display: block;
+      display    : block;
       font-family: 'Oswald', sans-serif;
-      font-size: 18px;
+      font-size  : 18px;
       font-weight: 500;
-      color: $black;
+      color      : $black;
       @include transition;
 
       @media (max-width: 480px) {
@@ -113,12 +116,12 @@
       }
 
       &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 20px;
-        height: 2px;
+        content         : '';
+        position        : absolute;
+        left            : 0;
+        right           : 0;
+        top             : 20px;
+        height          : 2px;
         background-color: transparent;
         @include transition;
       }
@@ -134,7 +137,7 @@
           color: $blue-light;
 
           &::before {
-            top: 100%;
+            top             : 100%;
             background-color: $blue-light;
           }
         }
@@ -145,18 +148,32 @@
 
 .first-screen-menu-logo {
   white-space: nowrap;
-  z-index: 10;
+  z-index    : 10;
 
   a img {
-    @include transition;
-    width: 240px;
-    display: inline-flex;
-    align-items: center;
+    width          : 240px;
+    display        : inline-flex;
+    align-items    : center;
     justify-content: center;
+    transform      : translateY(-20px);
+    transition     : transform 0.5s ease;
   }
 }
 
 .trap-element {
-  height: 1px;
+  height    : 1px;
   visibility: hidden;
+}
+
+.logo-active {
+  z-index: 1001;
+
+  a img {
+    position : fixed;
+    top      : 9px;
+    right    : 57px;
+    width    : 72px;
+    height   : 46px;
+    transform: translateY(0);
+  }
 }

@@ -28,39 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // function adjustFontSize() {
-  //   const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-  //   let imageSizePercentage = 15.5;
-  //   let scrollPosition = window.scrollY;
-  //   if (scrollPosition > 0) {
-  //     imageSizePercentage = 15.5;
-  //   } else {
-  //     imageSizePercentage = 60;
-  //   }
-  //   let imageSize = (parentWidth * imageSizePercentage) / 100;
-  //   document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
-  // }
-  // adjustFontSize();
-  window.addEventListener('resize', function () {
-    adjustFontSize();
-  });
-  window.addEventListener('scroll', function () {
-    adjustFontSize();
-  });
   const objToStick = document.querySelector(".first-screen-body");
-  const objToHide = document.querySelector(".first-screen__theses");
-  if (objToStick) {
+  const objToStick_logo = document.querySelector(".first-screen-menu-logo");
+
+  if (objToStick && objToStick_logo) {
     let topOfObjToStick = objToStick.offsetTop;
     window.addEventListener("scroll", function () {
-      let windowScroll = window.scrollY || window.pageYOffset;
-      if (windowScroll > topOfObjToStick) {
+      if (window.scrollY >= topOfObjToStick) {
         objToStick.classList.add("active");
-        objToHide && objToHide.classList.add("hide");
+        objToStick_logo.classList.add("logo-active");
       } else {
         objToStick.classList.remove("active");
-        objToHide && objToHide.classList.remove("hide");
+        objToStick_logo.classList.remove("logo-active");
       }
     });
   }
 });
-
