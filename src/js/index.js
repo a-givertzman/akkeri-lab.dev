@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (objToStick && objToStick_logo) {
     let topOfObjToStick = objToStick.offsetTop;
     window.addEventListener("scroll", function () {
-      if (window.scrollY >= topOfObjToStick) {
+      if (window.scrollY >= topOfObjToStick - 30) {
         objToStick.classList.add("active");
         objToStick_logo.classList.add("logo-active");
       } else {
