@@ -40,6 +40,11 @@ Please follow the steps to update site content
     Edit files in thr `src/`
 
 5. Rebuild
+    
+    Update dependencies
+    ```bash
+    npm install -g npm-check-updates && npm-check-updates -u && rm -fr node_modules && npm install
+    ```
 
     For development with the hot-reload use
 

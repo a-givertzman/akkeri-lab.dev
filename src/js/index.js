@@ -28,39 +28,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function adjustFontSize() {
-    const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let imageSizePercentage = 15.5;
-    let scrollPosition = window.scrollY;
-    if (scrollPosition > 0) {
-      imageSizePercentage = 15.5;
-    } else {
-      imageSizePercentage = 50;
-    }
-    let imageSize = (parentWidth * imageSizePercentage) / 100;
-    document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
-  }
-  adjustFontSize();
-  window.addEventListener('resize', function () {
-    adjustFontSize();
-  });
-  window.addEventListener('scroll', function () {
-    adjustFontSize();
-  });
-  const objToStick = document.querySelector(".first-screen-body");
-  const objToHide = document.querySelector(".first-screen__theses");
-  if (objToStick) {
-    let topOfObjToStick = objToStick.offsetTop;
-    window.addEventListener("scroll", function () {
-      let windowScroll = window.scrollY || window.pageYOffset;
-      if (windowScroll > topOfObjToStick) {
-        objToStick.classList.add("active");
-        objToHide && objToHide.classList.add("hide");
-      } else {
-        objToStick.classList.remove("active");
-        objToHide && objToHide.classList.remove("hide");
-      }
-    });
-  }
-});
+  const nav = document.querySelector(".first-screen-body");
+  const logo = document.querySelector(".first-screen-menu-logo");
+  const navOffset = nav.getBoundingClientRect().top + window.scrollY;
+  const placeholder = document.createElement('div');
+  const navMarginBottom = parseInt(window.getComputedStyle(nav).marginBottom);
 
+  placeholder.style.height = `${nav.offsetHeight + navMarginBottom}px`;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= navOffset) {
+      nav.classList.add("active");
+      nav.style.transition = "box-shadow 0.3s ease-in";
+      nav.parentNode.insertBefore(placeholder, nav);
+      logo.classList.add("logo-active");
+    } else {
+      nav.classList.remove("active");
+      logo.classList.remove("logo-active");
+
+      nav.style.transition = "none";
+      if (placeholder.parentNode) {
+        placeholder.parentNode.removeChild(placeholder);
+      }
+    }
+  });
+});

@@ -1,101 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
 .first-screen {
-  min-height      : 100vh;
-  background-color: $grey;
-  display         : flex;
-  flex-direction  : column;
-  justify-content : center;
-  position        : relative;
-  height          : 100vh;
-
-  &__title {
-    @include text-width;
-  }
-
-  &__spacer {
-    flex-grow: 1;
-  }
+  display       : flex;
+  flex-direction: column;
+  background    : linear-gradient(90deg, $grey-dark 10%, $grey 50%, $grey-dark 90%);
 
   &__theses {
-    padding-bottom : 64px;
-    display        : flex;
-    flex-direction : row;
-    justify-content: flex-end;
-
-    font-weight    : 500;
-    font-size      : 1.5rem;
-    text-align     : right;
-
-    margin: 0px 6rem 18rem 0px; 
-
-    opacity        : 1.0;
-    @include transition;
-
-    
-    &.hide {
-      opacity: 0;
-    }
-
-    li {
-      margin       : 10px 5px;
-      line-height  : 1.0;
-
-      &:first-of-type {
-        margin-top: 20px;
-      }
-    }
-  }
-
-  &__contact-us {
-    font-size: 1.5rem;
-    line-height: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    // align-items: flex-end;
-    background-color: #2C6DB2;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 6px;
+    width      : 752px;
+    margin     : 83px 0 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size  : 64px;
+    line-height: 95px;
+    color      : $black;
+    text-shadow: 0 4px 4px rgba($black, 0.25);
   }
 }
 
 .first-screen .container {
-  min-height     : 100vh;
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
+  display       : flex;
+  flex-direction: column;
 }
 
 .first-screen-body {
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-  flex-direction : column;
-  position       : sticky;
-  padding        : 10px;
-  width          : 100%;
+  position       : relative;
   top            : 0;
   z-index        : 1000;
-  transition     : top 0.3s ease;
-
-  &.active {
-    position        : fixed;
-    top             : 0;
-    left            : 0;
-    width           : 100%;
-    background-color: $grey;
-    box-shadow      : 0px 12px 18px -6px rgba($black, 0.3);
-  }
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 100%;
+  padding        : 20px;
+  margin-bottom  : 98px;
+  box-shadow     : none;
 
   &__item {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    margin-bottom  : 154px;
+
     @media (max-width: 550px) {
       display    : flex;
       align-items: center;
     }
   }
+
+  &.active {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    background-color: $grey;
+    box-shadow      : 0 12px 18px -6px rgba($black, 0.3);
+  }
 }
 
 .first-screen-list {
   display: flex;
+  gap    : 24px;
   @include transition;
 
   @media (max-width: 768px) {
@@ -104,17 +67,12 @@
   }
 
   &__item {
-    padding : 5px 32px;
     position: relative;
     @include transition;
 
-
-    @media (max-width: 480px) {
-      padding: 5px 20px;
-    }
-
-    a {
+    .first-screen-list__link {
       display    : block;
+      font-family: 'Oswald', sans-serif;
       font-size  : 18px;
       font-weight: 500;
       color      : $black;
@@ -142,7 +100,7 @@
 
     @include hovers {
       &:hover {
-        a {
+        .first-screen-list__link {
           color: $blue-light;
 
           &::before {
@@ -153,24 +111,40 @@
       }
     }
   }
-
 }
 
 .first-screen-menu-logo {
-  position   : relative;
   white-space: nowrap;
   z-index    : 10;
 
   a img {
-    @include transition;
-    width          : 80px; // initial image width
     display        : inline-flex;
-    align-items    : center;
     justify-content: center;
+    align-items    : center;
+    width          : 240px;
   }
 }
 
-.trap-element {
-  height    : 1px;
-  visibility: hidden;
+.logo-active {
+  z-index: 1001;
+  a img {
+    position : fixed;
+    top      : 9px;
+    right    : 57px;
+    width    : 72px;
+    height   : 46px;
+    animation: dropAnimation 0.5s ease-out forwards;
+  }
+}
+
+@keyframes dropAnimation {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
 }
