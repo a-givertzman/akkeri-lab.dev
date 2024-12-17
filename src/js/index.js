@@ -28,19 +28,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const objToStick = document.querySelector(".first-screen-body");
-  const objToStick_logo = document.querySelector(".first-screen-menu-logo");
+  const nav = document.querySelector(".first-screen-body");
+  const logo = document.querySelector(".first-screen-menu-logo");
+  const navOffset = nav.getBoundingClientRect().top + window.scrollY;
+  const placeholder = document.createElement('div');
+  const navMarginBottom = parseInt(window.getComputedStyle(nav).marginBottom);
 
-  if (objToStick && objToStick_logo) {
-    let topOfObjToStick = objToStick.offsetTop;
-    window.addEventListener("scroll", function () {
-      if (window.scrollY >= topOfObjToStick - 30) {
-        objToStick.classList.add("active");
-        objToStick_logo.classList.add("logo-active");
-      } else {
-        objToStick.classList.remove("active");
-        objToStick_logo.classList.remove("logo-active");
+  placeholder.style.height = `${nav.offsetHeight + navMarginBottom}px`;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= navOffset) {
+      nav.classList.add("active");
+      nav.style.transition = "box-shadow 0.3s ease-in";
+      nav.parentNode.insertBefore(placeholder, nav);
+      logo.classList.add("logo-active");
+    } else {
+      nav.classList.remove("active");
+      logo.classList.remove("logo-active");
+
+      nav.style.transition = "none";
+      if (placeholder.parentNode) {
+        placeholder.parentNode.removeChild(placeholder);
       }
-    });
-  }
+    }
+  });
 });

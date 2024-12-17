@@ -464,10 +464,9 @@ footer h2 {
 }
 
 .first-screen {
-  background: linear-gradient(90deg, #d9d9d9 10%, #E2E2E2 50%, #d9d9d9 90%);
   display: flex;
   flex-direction: column;
-  position: relative;
+  background: linear-gradient(90deg, #d9d9d9 10%, #E2E2E2 50%, #d9d9d9 90%);
 }
 .first-screen__theses {
   width: 752px;
@@ -478,29 +477,6 @@ footer h2 {
   line-height: 95px;
   color: #000000;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-.first-screen__theses.hide {
-  opacity: 0;
-}
-.first-screen__theses li {
-  margin: 10px 5px;
-  line-height: 1;
-}
-.first-screen__theses li:first-of-type {
-  margin-top: 20px;
-}
-.first-screen__spacer {
-  flex-grow: 1;
-}
-.first-screen__contact-us {
-  font-size: 1.5rem;
-  line-height: 100%;
-  display: inline-block;
-  background-color: #2C6DB2;
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 6px;
 }
 
 .first-screen .container {
@@ -509,19 +485,17 @@ footer h2 {
 }
 
 .first-screen-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: sticky;
-  padding: 20px;
-  margin-bottom: 98px;
-  width: 100%;
+  position: relative;
   top: 0;
   z-index: 1000;
-  background-color: transparent;
-  transform: translateY(-20px);
-  transition: background-color 0.3s ease-in-out, transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 98px;
+  box-shadow: none;
 }
 .first-screen-body__item {
   display: flex;
@@ -539,10 +513,8 @@ footer h2 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   background-color: #E2E2E2;
   box-shadow: 0 12px 18px -6px rgba(0, 0, 0, 0.3);
-  transform: translateY(0);
 }
 
 .first-screen-list {
@@ -601,17 +573,10 @@ footer h2 {
   z-index: 10;
 }
 .first-screen-menu-logo a img {
-  width: 240px;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  transform: translateY(-20px);
-  transition: transform 0.5s ease;
-}
-
-.trap-element {
-  height: 1px;
-  visibility: hidden;
+  align-items: center;
+  width: 240px;
 }
 
 .logo-active {
@@ -623,9 +588,20 @@ footer h2 {
   right: 57px;
   width: 72px;
   height: 46px;
-  transform: translateY(0);
+  animation: dropAnimation 0.5s ease-out forwards;
 }
 
+@keyframes dropAnimation {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
 .about {
   min-height: 80vh;
   background-color: #313131;
