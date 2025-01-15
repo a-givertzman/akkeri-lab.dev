@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scrollPosition > 250) {
       logoSizePercentage = 0.0;
       logoHeight = '0px'
-      iconSizePercentage = 5.0;
+      if (window.screen.width < 550) {
+        iconSizePercentage = 10.0;
+      } else {
+        iconSizePercentage = 5.0;
+      }
     } else if (scrollPosition < 210) {
       logoSizePercentage = 50.0;
       logoHeight = '';
