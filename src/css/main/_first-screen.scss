@@ -85,11 +85,18 @@
     background-color: $grey;
     box-shadow      : 0px 12px 18px -6px rgba($black, 0.3);
   }
-
   &__item {
+    display    : flex;
+    align-items    : center;
+    flex: 1 1 auto;
+    justify-content: center;
     @media (max-width: 550px) {
       display    : flex;
-      align-items: center;
+      flex-direction : column;
+      // align-items: center;
+    }
+    &__side {
+      flex: 20 1 auto;
     }
   }
 }
@@ -164,6 +171,22 @@
   a img {
     @include transition;
     width          : 80px; // initial image width
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
+  }
+}
+
+.first-screen-menu-logo-icon {
+  display: flex;
+  position   : relative;
+  white-space: nowrap;
+  z-index    : 10;
+  @include transition;
+
+  a img {
+    @include transition;
+    width          : 50px; // initial image width
     display        : inline-flex;
     align-items    : center;
     justify-content: center;

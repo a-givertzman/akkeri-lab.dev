@@ -18,20 +18,16 @@
     }
 
     &.details-section {
-
         &:nth-child(2n) {
             background-color: $grey;
             color: $black;
-
             .container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
-
                 .project__img-wrapper {
                     grid-column: span 2;
                 }
-
                 @media (max-width: 1024px) {
                     display: flex;
                     flex-direction: column;
@@ -42,25 +38,20 @@
         &:nth-child(2n+1) {
             background-color: $blue;
             color: $white;
-
             h1,
             h2,
             h3,
             h4 {
                 color: inherit;
             }
-
-
             .container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
-
                 .project__img-wrapper {
                     order: -1;
                     grid-column: span 2;
                 }
-
                 @media (max-width: 1024px) {
                     display: flex;
                     flex-direction: column;
@@ -80,4 +71,25 @@
         text-underline-offset: 4px;
         color: $blue-light;
     }
-}
+    .details-section {
+        ul {
+            list-style-type: disc; 
+            list-style-position: inside; 
+            margin-top: 20px;
+            li {
+                list-style-type: disc;
+                margin       : 10px 5px;
+                line-height  : 1.0;
+                li {
+                    margin-left: 15px;
+                    li {
+                        margin-left: 15px;
+                        li {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
