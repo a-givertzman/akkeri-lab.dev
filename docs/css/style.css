@@ -547,8 +547,6 @@ footer h2 {
 }
 @media (max-width: 550px) {
   .first-screen-body__item {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
 }
@@ -628,7 +626,6 @@ footer h2 {
 .first-screen-menu-logo-icon {
   display: flex;
   position: relative;
-  white-space: nowrap;
   z-index: 10;
   transition: all 0.4s ease;
 }
