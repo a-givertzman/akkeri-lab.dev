@@ -28,32 +28,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function adjustFontSize() {
+  function switchLogoSize() {
     const parentWidth = document.querySelector(".first-screen-list").offsetWidth;
-    let imageSizePercentage = 15.5;
+    let logoHeight = '';
+    let logoSizePercentage = 15.5;
     let iconSizePercentage = 0.0;
     let scrollPosition = window.scrollY;
     if (scrollPosition > 250) {
-      imageSizePercentage = 0.0;
+      logoSizePercentage = 0.0;
+      logoHeight = '0px'
       iconSizePercentage = 5.0;
-    } else {
-      imageSizePercentage = 50.0;
+    } else if (scrollPosition < 210) {
+      logoSizePercentage = 50.0;
+      logoHeight = '';
       iconSizePercentage = 0.0;
     }
-    let imageSize = (parentWidth * imageSizePercentage) / 100;
+    let logoSize = (parentWidth * logoSizePercentage) / 100;
     let iconSize = (parentWidth * iconSizePercentage) / 100;
-    document.querySelector(".first-screen-menu-logo a img").style.width = imageSize + 'px';
-    // document.querySelector(".first-screen-menu-logo-icon").innerHTML = iconSize;
+    document.querySelector(".first-screen-menu-logo a img").style.width = logoSize + 'px';
     document.querySelector(".first-screen-menu-logo-icon").style.width = (iconSize + 1.0) + 'px';
     document.querySelector(".first-screen-menu-logo-icon").style.maxWidth = (iconSize + 1.0) + 'px';
     document.querySelector(".first-screen-menu-logo-icon a img").style.width = iconSize + 'px';
+    document.querySelector(".first-screen-menu-logo").style.height = logoHeight;
   }
-  adjustFontSize();
+  switchLogoSize();
   window.addEventListener('resize', function () {
-    adjustFontSize();
+    switchLogoSize();
   });
   window.addEventListener('scroll', function () {
-    adjustFontSize();
+    switchLogoSize();
   });
   const objToStick = document.querySelector(".first-screen-body");
   const objToHide = document.querySelector(".first-screen__theses");

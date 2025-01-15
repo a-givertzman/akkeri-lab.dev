@@ -539,6 +539,8 @@ footer h2 {
 }
 .first-screen-body__item {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   flex: 1 1 auto;
   justify-content: center;
@@ -547,6 +549,7 @@ footer h2 {
   .first-screen-body__item {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }
 .first-screen-body__item__side {
@@ -577,6 +580,7 @@ footer h2 {
   display: block;
   font-size: 18px;
   font-weight: 500;
+  white-space: nowrap;
   color: #050505;
   transition: all 0.4s ease;
 }

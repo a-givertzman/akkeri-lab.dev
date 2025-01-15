@@ -87,13 +87,15 @@
   }
   &__item {
     display    : flex;
+    flex-direction : row;
+    flex-wrap: nowrap;
     align-items    : center;
     flex: 1 1 auto;
     justify-content: center;
     @media (max-width: 550px) {
       display    : flex;
       flex-direction : column;
-      // align-items: center;
+      align-items: center;
     }
     &__side {
       flex: 20 1 auto;
@@ -124,6 +126,14 @@
       display    : block;
       font-size  : 18px;
       font-weight: 500;
+      white-space: nowrap;
+      // word-break: keep-all;
+      // word-wrap: unset;
+      // overflow-wrap: unset;
+      // -webkit-hyphens: none;
+      // -moz-hyphens: none;
+      // -ms-hyphens: none;
+      // hyphens:unset;
       color      : $black;
       @include transition;
 
@@ -167,6 +177,7 @@
   position   : relative;
   white-space: nowrap;
   z-index    : 10;
+  // @include transition;
 
   a img {
     @include transition;
