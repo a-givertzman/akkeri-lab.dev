@@ -39,7 +39,7 @@ const imagesDev = () => {
 }
 
 const filesDev = () => {
-  return src(['src/files/*.*'], { encoding: false })
+  return src(['src/files/**/*.*'], { encoding: false })
   .pipe(dest('docs/files'))
 }
 
@@ -101,7 +101,7 @@ const imagesBuild = () => {
 }
 
 const filesBuild = () => {
-  return src(['src/files/*.*'], { encoding: false })
+  return src(['src/files/**/*.*'], { encoding: false })
   .pipe(dest('docs/files'))
 }
 
