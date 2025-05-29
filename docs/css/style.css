@@ -784,6 +784,11 @@ footer h2 {
     color: #050505;
     grid-column: span 1;
   }
+  .projects__item:nth-child(5) {
+    background-color: #2C6DB2;
+    color: #ffffff !important;
+    grid-column: 1/-1;
+  }
 }
 @media (max-width: 1024px) {
   .projects__item:nth-child(odd) {
