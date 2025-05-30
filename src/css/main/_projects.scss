@@ -70,6 +70,11 @@
         color: $black;
         grid-column: span 1;
       }
+       &:nth-child(5) {
+       background-color: $blue-light;
+       color: $white !important;
+       grid-column: 1 / -1;
+       }
     }
     @media (max-width: 1024px) {
       &:nth-child(odd) {
