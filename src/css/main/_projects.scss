@@ -84,3 +84,365 @@
     }
   }
 }
+
+.product-banner {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #030608;
+
+  // =========================
+  // ОБЩИЕ СТИЛИ
+  // =========================
+
+  &__background {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 2;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__logo-note {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    color: $white;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    color: $white;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  &__description {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+  &__note {
+    margin: clamp(6px, 2cqw, 20px) 0 0;
+    color: #f39a32;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+
+  // =========================
+  // OPERION
+  // =========================
+
+  &__logo--operion {
+    top: 40%;
+    left: 3%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+
+  &__logo-note--operion {
+    left: 5%;
+    bottom: 10%;
+    width: 20%;
+    font-size: clamp(5px, 1.3cqw, 15px);
+    text-align: left;
+  }
+
+  &__content--operion {
+    top: 55%;
+    right: 4%;
+    width: 38%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+
+  &__title--operion {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    font-size: clamp(24px, 8.8cqw, 95px);
+    white-space: nowrap;
+  }
+  
+  &__description--operion {
+    color: $blue-light;
+    font-size: clamp(9px, 3.2cqw, 32px);
+  }
+  
+  &__note--operion {
+    font-size: clamp(5px, 1.05cqw, 13px);
+  }
+
+
+  // =========================
+  // CRANEWARE
+  // =========================
+
+  &__logo--craneware {
+    top: 50%;
+    right: 3%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+
+  &__content--craneware {
+    top: 52%;
+    left: 3%;
+    width: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  &__title--craneware {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    font-size: clamp(24px, 8.8cqw, 95px);
+    white-space: nowrap;
+  }
+
+  &__description--craneware {
+    color: $blue-light;
+    font-size: clamp(9px, 3.2cqw, 32px);
+    text-align: left;
+  }
+
+  &__note--craneware {
+    font-size: clamp(5px, 1.05cqw, 13px);
+    text-align: left;
+  }
+
+
+  // =========================
+  // BOARDTRIX
+  // =========================
+
+  &__logo--boardtrix {
+    top: 50%;
+    left: 5%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+
+  &__content--boardtrix {
+    top: 48%;
+    right: 3%;
+    width: 43%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+
+  &__title--boardtrix {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    font-size: clamp(24px, 8.8cqw, 95px);
+    white-space: nowrap;
+  }
+
+
+
+  &__description--boardtrix {
+    color: #079ec1;
+    font-size: clamp(9px, 3.2cqw, 30px);
+  }
+
+  &__note--boardtrix {
+    font-size: clamp(5px, 1cqw, 12px);
+  }
+
+
+  // =========================
+  // МОБИЛЬНАЯ ВЕРСИЯ
+  // =========================
+
+  @media (max-width: 768px) {
+    border-radius: 5px;
+
+
+
+    // CraneWare
+
+    &__logo--craneware {
+      right: 3%;
+      width: 18%;
+    }
+
+    &__content--craneware {
+      left: 3%;
+      width: 58%;
+    }
+
+    // BoardTrix
+
+    &__logo--boardtrix {
+      left: 4%;
+      width: 20%;
+    }
+
+    &__content--boardtrix {
+      right: 3%;
+      width: 48%;
+    }
+  }
+}
+
+
+// =========================
+// КАРТОЧКА ПРОДУКТА
+// =========================
+
+.product-card {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+
+// =========================
+// КНОПКИ ПОД БАННЕРАМИ
+// =========================
+
+.product-actions {
+  display: grid;
+  container-type: inline-size;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+
+  &--operion {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &--craneware {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &--boardtrix {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px;
+
+    &--operion {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &--craneware {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &--boardtrix {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &--operion,
+    &--craneware,
+    &--boardtrix {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
+// =========================
+// ОДНА КНОПКА
+// =========================
+
+.product-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 60px;
+  padding: 10px 12px;
+
+  border: 0;
+  border-radius: 3px;
+
+  background-color: $blue-light;
+  color: $white;
+
+  font: inherit;
+  font-size: clamp(10px, 1.4cqw, 15px);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  appearance: none;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  &:hover {
+    color: $white;
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__icon {
+    display: block;
+    flex: 0 0 20px;
+
+    width: 20px;
+    min-width: 20px;
+    max-width: 20px;
+
+    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
+
+    object-fit: contain;
+  }
+
+  &__text {
+    display: block;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 52px;
+    padding: 8px 10px;
+    font-size: 11px;
+
+    &__icon {
+      flex-basis: 18px;
+
+      width: 18px;
+      min-width: 18px;
+      max-width: 18px;
+
+      height: 18px;
+      min-height: 18px;
+      max-height: 18px;
+    }
+  }
+}
