@@ -7,81 +7,9 @@
   }
 
   &__cards {
-    display              : grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows   : min-content min-content;
-    gap                  : 30px;
-
-    @media (max-width: 1024px) {
-      display       : flex;
-      flex-direction: column;
-    }
-  }
-
-  &__item {
-    position     : relative;
-    border-radius: 7px;
-    padding      : 30px;
-    min-height   : 250px;
-    box-shadow   : 0px 0px 6px 0px rgba($black, 0.1);
-
-    @media (max-width:768px) {
-      padding      : 15px;
-      border-radius: 5px;
-    }
-
-    h4 {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__link {
-    display    : block;
-    font-weight: 800;
-    color      : inherit;
-    @include transition;
-  }
-
-  &__item {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-
-
-    .projects__link:last-child {
-      margin-top           : auto;
-      padding-top          : 30px;
-      font-size            : 1.5rem;
-      // Underline decoration
-      text-decoration-style: wavy;
-      text-decoration-line : underline;
-      text-underline-offset: 4px;
-    }
-  }
-
-  // Alternating the colors of the cards
-  &__item {
-    background-color: $blue-light;
-    color: $white;
-    grid-column: span 2;
-
-    @media (min-width: 1025px) {
-      &:nth-child(4n-3), &:nth-child(4n) {
-        background-color: $white;
-        color: $black;
-        grid-column: span 1;
-      }
-       &:nth-child(5) {
-       background-color: $blue-light;
-       color: $white !important;
-       grid-column: 1 / -1;
-       }
-    }
-    @media (max-width: 1024px) {
-      &:nth-child(odd) {
-        background-color: $white;
-        color: $black;
-      }
-    }
+    width: 100%;
   }
 }
 
@@ -148,7 +76,6 @@
     text-transform: uppercase;
   }
 
-
   // =========================
   // OPERION
   // =========================
@@ -181,16 +108,15 @@
     font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
-  
+
   &__description--operion {
     color: $blue-light;
     font-size: clamp(9px, 3.2cqw, 32px);
   }
-  
+
   &__note--operion {
     font-size: clamp(5px, 1.05cqw, 13px);
   }
-
 
   // =========================
   // CRANEWARE
@@ -228,7 +154,6 @@
     text-align: left;
   }
 
-
   // =========================
   // BOARDTRIX
   // =========================
@@ -254,8 +179,6 @@
     white-space: nowrap;
   }
 
-
-
   &__description--boardtrix {
     color: #079ec1;
     font-size: clamp(9px, 3.2cqw, 30px);
@@ -265,7 +188,6 @@
     font-size: clamp(5px, 1cqw, 12px);
   }
 
-
   // =========================
   // МОБИЛЬНАЯ ВЕРСИЯ
   // =========================
@@ -273,7 +195,29 @@
   @media (max-width: 768px) {
     border-radius: 5px;
 
+    // Operion
 
+    &__content--operion {
+      top: 52%;
+      right: 3%;
+      width: 40%;
+    }
+  
+    &__title--operion {
+      margin-bottom: 3px;
+      font-size: 7cqw;
+    }
+  
+    &__description--operion {
+      font-size: 2.5cqw;
+      line-height: 1.1;
+    }
+  
+    &__note--operion {
+      margin-top: 4px;
+      font-size: 1.2cqw;
+      line-height: 1.1;
+    }
 
     // CraneWare
 
@@ -298,9 +242,9 @@
       right: 3%;
       width: 48%;
     }
+
   }
 }
-
 
 // =========================
 // КАРТОЧКА ПРОДУКТА
@@ -310,7 +254,6 @@
   width: 100%;
   margin-bottom: 40px;
 }
-
 
 // =========================
 // КНОПКИ ПОД БАННЕРАМИ
@@ -352,6 +295,7 @@
   }
 
   @media (max-width: 480px) {
+
     &--operion,
     &--craneware,
     &--boardtrix {
@@ -359,7 +303,6 @@
     }
   }
 }
-
 
 // =========================
 // ОДНА КНОПКА
@@ -405,6 +348,76 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  &--disabled {
+    position: relative;
+    background-color: #7b8491;
+    color: rgba($white, 0.8);
+    cursor: not-allowed;
+    opacity: 0.75;
+    user-select: none;
+
+    &:hover {
+      color: rgba($white, 0.8);
+      filter: none;
+      transform: none;
+    }
+
+    &::before {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      z-index: 10;
+
+      padding: 6px 10px;
+      border-radius: 4px;
+
+      background-color: #11151c;
+      color: $white;
+
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: none;
+      white-space: nowrap;
+
+      content: attr(data-tooltip);
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 4px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: calc(100% + 3px);
+      left: 50%;
+      z-index: 9;
+
+      width: 8px;
+      height: 8px;
+
+      background-color: #11151c;
+      content: "";
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) rotate(45deg);
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover::before {
+      transform: translate(-50%, 0);
+    }
   }
 
   &__icon {
