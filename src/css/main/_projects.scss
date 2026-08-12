@@ -1,4 +1,5 @@
 .projects {
+  padding: 50px 0;
   background-color: $blue;
   color: $white;
 
@@ -11,6 +12,26 @@
     flex-direction: column;
     width: 100%;
   }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  &__title-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    &__title-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }  
 }
 
 .product-banner {
@@ -193,8 +214,7 @@
   // =========================
 
   @media (max-width: 768px) {
-    border-radius: 5px;
-
+    
     // Operion
 
     &__content--operion {
@@ -337,17 +357,25 @@
   appearance: none;
 
   transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+  background-color 0.2s ease,
+  box-shadow 0.2s ease;
 
-  &:hover {
-    color: $white;
-    filter: brightness(1.1);
-    transform: translateY(-2px);
+  // Наведение только на устройствах с мышкой
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: #f39a32;
+      color: $white;
+      box-shadow: 0 4px 12px rgba($black, 0.18);
+    }
   }
 
+  // Нажатие на телефоне и компьютере
+
   &:active {
-    transform: translateY(0);
+    background-color: #079ec1;
+    color: $white;
+    box-shadow: none;
   }
 
   &--disabled {
@@ -360,6 +388,14 @@
 
     &:hover {
       color: rgba($white, 0.8);
+      filter: none;
+      transform: none;
+    }
+
+    &:active {
+      background-color: #7b8491;
+      color: rgba($white, 0.8);
+      box-shadow: none;
       filter: none;
       transform: none;
     }

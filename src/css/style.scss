@@ -8,3 +8,20 @@
 @import 'main/careers';
 @import 'main/projects-pages';
 @import 'main/contacts';
+
+.about > .container,
+.activities > .container,
+.projects > .container {
+  width: calc(100% - 48px);
+  max-width: 1800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .about > .container,
+  .activities > .container,
+  .projects > .container {
+    width: calc(100% - 24px);
+  }
+}
