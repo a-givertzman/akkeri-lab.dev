@@ -14,112 +14,220 @@
   })
   <section class="project light-section" id="project__overview">
     <div class="container">
-      <h2 data-aos="fade-up">CraneWare.App &mdash; Система мониторинга грузоподъемных механизмов</h2>
-      <div data-aos="fade-up">Программный продукт, выступающий в качестве помощника оператора грузоподъёмной
-техники. Предназначен для быстрого определения технического состояния и готовности к
-работе, мониторинга непосредственно во время работы и помощи при поиске и анализе
-неисправностей.
-        Области применения:
-        <ul class="project__features">
-          <li>
-            Промышленные грузоподъемные механизмы;
-          </li>
-          <li>
-            Грузоподъемные механизмы грузовых судов.
-          </li>
+      <div class="project-product-banner">
+        <img class="project-product-banner__background" src="../img/products/craneware_visual.png" alt="">
+        <div class="project-product-banner__content">
+          <h2 class="project-product-banner__title">
+            CraneWare.App
+          </h2>
+          <p class="project-product-banner__description">
+            СИСТЕМА МОНИТОРИНГА<br>
+            ГРУЗОПОДЪЕМНЫХ МЕХАНИЗМОВ
+          </p>
+        </div>
+        <img class="project-product-banner__logo" src="../img/products/craneware-logo.svg" alt="CraneWare">
+      </div>
+      <div class="project-product-info">
+        <p class="project-product-info__lead">
+          Программный продукт, выступающий в качестве помощника оператора грузоподъёмной техники.
+        </p>
+        <p class="project-product-info__text">
+          Предназначен для быстрого определения технического состояния и готовности к работе,
+          мониторинга непосредственно во время работы и помощи при поиске и анализе неисправностей.
+        </p>
+        <p class="project-product-info__title">
+          Области применения:
+        </p>
+        <ul class="project-product-info__list">
+          <li>Промышленные грузоподъемные механизмы;</li>
+          <li>Грузоподъемные механизмы грузовых судов.</li>
         </ul>
       </div>
-      <br>
-      <strong>Для получения информации о способах приобретения права использования наших продуктов и стоимости их использования свяжитесь с нами по почте:</strong> <a class="project__contact-us" href="mailto:info@sa-lab.dev?subject=Приложение LiftSense">info@sa-lab.dev</a>
-      <br>
-      <br>
-      🖨️ <a class="project__contact-us" href="../files/crane-ware/app/CraneWare_App_Function_Description.pdf">Продукт_CraneWare_Описание_функциональных_характеристик.pdf</a><br>
-      🖨️ <a class="project__contact-us" href="../files/crane-ware/app/CraneWare_App_User_Guide.pdf">Продукт_CraneWare_Рукводство_пользователя.pdf</a><br>
-      🖨️ <a class="project__contact-us" href="../files/crane-ware/app/CraneWare_App_Connection_Setting.pdf">Продукт_CraneWare_Рукводство_по_эксплуатации.pdf</a>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__home">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Помощь оператору</h3>
-        <div>Главный экран содержит основные индикаторы состояния крана и элементы управления.</div>
+      <div class="project-tabs">
+        <button class="project-tabs__button project-tabs__button--active" type="button" data-project-tab="description">
+          ОПИСАНИЕ
+        </button>
+        <button class="project-tabs__button" type="button" data-project-tab="support">
+          ПОДДЕРЖКА
+        </button>
       </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-home.png" alt="home" class="project__img">
+      <div class="project-tab-panel project-tab-panel--active" data-project-panel="description">
+        <div class="project-slider" data-project-slider>
+          <button class="project-slider__arrow project-slider__arrow--prev" type="button" data-slide-prev
+            aria-label="Предыдущий слайд">
+            &#10094;
+          </button>
+          <div class="project-slider__slides">
+            <div class="project-slide project-slide--active">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-home.png" alt="Главный экран CraneWare.App">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Помощь оператору</h3>
+                  <div>
+                    Главный экран содержит основные индикаторы состояния крана
+                    и элементы управления.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-station.png" alt="Насосная станция">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Насосная станция</h3>
+                  <div>
+                    Экран «Насосная станция» предназначен для мониторинга состояния
+                    гидравлической системы, управления насосами и контроля параметров масла.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-accum.png" alt="Аккумулятор">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Аккумулятор</h3>
+                  <div>
+                    Данный экран отображает состояние гидравлических аккумуляторов, которые
+                    обеспечивают стабильную работу гидравлической системы, сглаживают скачки
+                    давления и обеспечивают аварийный запас энергии.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-winch.png" alt="Лебедки">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Лебедки</h3>
+                  <div>
+                    Данный экран отображает состояние гидромоторов лебедки,
+                    обеспечивающих управление движением каната.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-alarm.png" alt="Аварии">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Аварии</h3>
+                  <div>
+                    Экран «Аварии» предназначен для отображения и управления
+                    аварийными событиями, возникающими в системе.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-events.png" alt="События">
+                </div>
+                <div class="project-slide__description">
+                  <h3>События</h3>
+                  <div>
+                    Экран событий предназначен для мониторинга состояния системы
+                    в реальном времени. Здесь отображаются сигналы, которые
+                    в конфигурации приложения помечены как события.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-craneware-compensation.png" alt="Компенсация качки">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Компенсация качки</h3>
+                  <div>
+                    Этот экран предназначен для мониторинга и настройки системы
+                    компенсации качки крана. График отображает данные с сенсоров,
+                    позволяя оператору анализировать колебания и корректировать
+                    работу крана.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="project-slider__arrow project-slider__arrow--next" type="button" data-slide-next
+            aria-label="Следующий слайд">
+            &#10095;
+          </button>
+          <div class="project-slider__counter">
+            <span data-slide-current>1</span> /
+            <span data-slide-total>7</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__hpu">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Насосная станция</h3>
-        <div>Экран «Насосная станция» предназначен для мониторинга состояния
-        гидравлической системы, управления насосами и контроля параметров масла.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-station.png" alt="winch" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__accum">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Аккумулятор</h3>
-        <div>Данный экран отображает состояние гидравлических аккумуляторов, которые
-           обеспечивают стабильную работу гидравлической системы, сглаживают скачки
-           давления и обеспечивают аварийный запас энергии.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-accum.png" alt="accumulator" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__winch">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Лебедки</h3>
-        <div>Данный экран отображает состояние гидромоторов лебедки, обеспечивающих 
-          управление движением каната.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-winch.png" alt="event" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__alarms">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Аварии</h3>
-        <div>Экран “Аварии” предназначен для отображения и управления аварийными 
-          событиями, возникающими в системе.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-alarm.png" alt="settings" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__events">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>События</h3>
-        <div>Экран событий предназначен для мониторинга состояния системы в реальном
-          времени. Здесь отображаются сигналы, которые в конфигурации приложения
-          помечены как события.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-events.png" alt="login" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__compensation">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Компенсация качки</h3>
-        <div>Этот экран предназначен для мониторинга и настройки системы компенсации качки крана. График отображает данные с сенсоров, позволяя оператору
-           анализировать колебания и корректировать работу крана.</div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-craneware-compensation.png" alt="compensation" class="project__img">
+      <div class="project-tab-panel" data-project-panel="support">
+        <div class="project-support">
+          <h3 class="project-support__title">
+            ТЕХНИЧЕСКАЯ ПОДДЕРЖКА
+          </h3>
+          <p class="project-support__text">
+            Для получения информации о способах приобретения права использования
+            наших продуктов и стоимости их использования свяжитесь с нами по почте:
+            <a href="mailto:info@sa-lab.dev?subject=CraneWare.App">
+              info@sa-lab.dev
+            </a>
+          </p>
+          <h4 class="project-support__subtitle">
+            ДОКУМЕНТАЦИЯ И ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ:
+          </h4>
+          <div class="project-support__docs">
+            <div class="project-support__doc">
+              <div class="project-support__pdf">
+                <iframe src="../files/crane-ware/app/CraneWare_App_Function_Description.pdf#toolbar=0&navpanes=0"
+                  title="Описание функциональных характеристик CraneWare.App"></iframe>
+              </div>
+              <span class="project-support__doc-name">
+                ОПИСАНИЕ ФУНКЦИОНАЛЬНЫХ ХАРАКТЕРИСТИК
+              </span>
+              <a class="project-support__doc-link" href="../files/crane-ware/app/CraneWare_App_Function_Description.pdf"
+                target="_blank" rel="noopener">
+                Открыть PDF
+              </a>
+            </div>
+            <div class="project-support__doc">
+              <div class="project-support__pdf">
+                <iframe src="../files/crane-ware/app/CraneWare_App_User_Guide.pdf#toolbar=0&navpanes=0"
+                  title="Руководство пользователя CraneWare.App"></iframe>
+              </div>
+              <span class="project-support__doc-name">
+                РУКОВОДСТВО ПОЛЬЗОВАТЕЛЯ
+              </span>
+              <a class="project-support__doc-link" href="../files/crane-ware/app/CraneWare_App_User_Guide.pdf"
+                target="_blank" rel="noopener">
+                Открыть PDF
+              </a>
+            </div>
+            <div class="project-support__doc">
+              <div class="project-support__pdf">
+                <iframe src="../files/crane-ware/app/CraneWare_App_Connection_Setting.pdf#toolbar=0&navpanes=0"
+                  title="Руководство по эксплуатации CraneWare.App"></iframe>
+              </div>
+              <span class="project-support__doc-name">
+                РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ
+              </span>
+              <a class="project-support__doc-link" href="../files/crane-ware/app/CraneWare_App_Connection_Setting.pdf"
+                target="_blank" rel="noopener">
+                Открыть PDF
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

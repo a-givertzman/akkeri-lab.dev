@@ -51,7 +51,6 @@
     display: block;
     width: 100%;
     height: auto;
-    object-fit: contain;
   }
 
   &__logo {
@@ -117,7 +116,7 @@
   }
 
   &__content--operion {
-    top: 55%;
+    top: 50%;
     right: 4%;
     width: 38%;
     transform: translateY(-50%);
@@ -136,6 +135,7 @@
   }
 
   &__note--operion {
+    margin-top: clamp(5px, 0.8cqw, 10px);
     font-size: clamp(5px, 1.05cqw, 13px);
   }
 
@@ -216,6 +216,11 @@
   @media (max-width: 768px) {
     
     // Operion
+
+    &__logo--operion {
+      left: 3%;
+      width: 18%;
+    }
 
     &__content--operion {
       top: 52%;
