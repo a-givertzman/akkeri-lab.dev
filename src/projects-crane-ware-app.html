@@ -7,14 +7,14 @@
 })
 
 <main class="project main">
-  @@include('html/header-section.html', {
+  @@include('html/header-project.html', {
   "indexRoute": "index.html",
   "careersRoute": "careers.html",
   "contactsRoute": "contacts.html"
   })
   <section class="project light-section" id="project__overview">
     <div class="container">
-      <div class="project-product-banner">
+      <div class="project-product-banner" data-aos="fade-up">
         <img class="project-product-banner__background" src="../img/products/craneware_visual.png" alt="">
         <div class="project-product-banner__content">
           <h2 class="project-product-banner__title">
@@ -27,7 +27,7 @@
         </div>
         <img class="project-product-banner__logo" src="../img/products/craneware-logo.svg" alt="CraneWare">
       </div>
-      <div class="project-product-info">
+      <div class="project-product-info" data-aos="fade-up">
         <p class="project-product-info__lead">
           Программный продукт, выступающий в качестве помощника оператора грузоподъёмной техники.
         </p>
@@ -43,7 +43,7 @@
           <li>Грузоподъемные механизмы грузовых судов.</li>
         </ul>
       </div>
-      <div class="project-tabs">
+      <div class="project-tabs" data-aos="fade-up">
         <button class="project-tabs__button project-tabs__button--active" type="button" data-project-tab="description">
           ОПИСАНИЕ
         </button>
@@ -52,7 +52,7 @@
         </button>
       </div>
       <div class="project-tab-panel project-tab-panel--active" data-project-panel="description">
-        <div class="project-slider" data-project-slider>
+        <div class="project-slider" data-project-slider data-aos="fade-up">
           <button class="project-slider__arrow project-slider__arrow--prev" type="button" data-slide-prev
             aria-label="Предыдущий слайд">
             &#10094;

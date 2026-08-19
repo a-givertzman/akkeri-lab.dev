@@ -4,12 +4,6 @@
     background-color: $blue;
     color: $white;
   }
-
-
-  //> .container {
-  //  max-width: 1500px;
-  //}
-
   &__title {
     display: flex;
     align-items: center;
@@ -20,30 +14,25 @@
     font-weight: 800;
     line-height: 1;
   }
-
   &__title-icon {
     width: 70px;
     height: 70px;
     object-fit: contain;
     flex: 0 0 auto;
   }
-
   @media (max-width: 768px) {
     &__title-icon {
       width: 40px;
       height: 40px;
     }
   }
-
   // Верхняя часть
-
   &__top {
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: stretch;
     margin-bottom: 16px;
   }
-
   &__intro {
     padding: 16px 20px;
     border-radius: 6px 0 0 6px;
@@ -53,32 +42,27 @@
     line-height: 1.2;
     height: 100%;
   }
-
   &__why {
     padding: 16px 20px;
     border-radius: 0 6px 6px 0;
-    background-color: $black;
-    color: $white;
-
+    background-color: $grey;
+    color: $black;
     h3 {
       margin: 0 0 8px;
-      color: $white;
+      color: $black;
       font-size: 1.25rem;
       font-weight: 800;
     }
-
     p {
       margin: 0;
       line-height: 1.2;
     }
   }
-
   &__logo {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 18px;
-
     img {
       display: block;
       width: 100%;
@@ -86,35 +70,29 @@
       height: auto;
     }
   }
-
   // Нижний блок
-
   &__developments {
     padding: 16px 22px;
     border-radius: 6px;
-    background-color: $black;
-    color: $white;
+    background-color: $grey;
+    color: $black;
   }
-
   &__developments-head {
     display: grid;
     grid-template-columns: 220px 1fr;
     gap: 20px;
     margin-bottom: 20px;
-
     h3 {
       margin: 0;
-      color: $white;
+      color: $black;
       font-size: 1.4rem;
       font-weight: 800;
     }
-
     p {
       margin: 0;
       line-height: 1.25;
     }
   }
-
   &__description-list {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -122,65 +100,55 @@
     margin: 0;
     padding: 0;
   }
-
   @media (min-width: 769px) and (max-width: 1300px) {
     &__description-list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 28px 36px;
     }
   }
-
   &__development-item {
     min-width: 0;
-
     dt {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       min-height: 48px;
       margin: 0 0 8px;
-      color: $white;
+      color: $black;
       font-weight: 800;
       line-height: 1.1;
     }
-
     dd {
       margin: 0;
-      color: $white;
+      color: $black;
       line-height: 1.2;
     }
-
     &--green {
       .about__development-icon {
         color: #52b849;
       }
     }
-
     &--orange {
       .about__development-icon {
         color: #f39a32;
       }
     }
-
     &--red {
       .about__development-icon {
         color: #ef5038;
       }
     }
-
     &--blue {
       .about__development-icon {
         color: $blue-light;
       }
     }
-
     &--grey {
       .about__development-icon {
         color: #9da5af;
       }
     }
   }
-
   &__development-icon {
     flex: 0 0 34px;
     font-size: 30px;
@@ -188,28 +156,22 @@
     line-height: 0.9;
     text-align: center;
   }
-
   // Планшет
-
   @media (max-width: 1024px) {
     &__top {
       grid-template-columns: 1fr 1.5fr;
     }
-
     &__logo {
       grid-column: 1 / -1;
       padding: 25px 0 5px;
-
       img {
         max-width: 130px;
       }
     }
-
     &__description-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-
   // Телефон
   @media (max-width: 768px) {
     &__title {
@@ -217,43 +179,34 @@
       margin-bottom: 20px;
       font-size: 30px;
     }
-
     &__top {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
     &__intro,
     &__why {
       border-radius: 6px;
     }
-
     &__logo {
       padding: 10px 0;
-
       img {
         max-width: 100px;
       }
     }
-
     &__developments {
       padding: 18px;
     }
-
     &__developments-head {
       display: block;
-
       h3 {
         margin-bottom: 12px;
       }
     }
-
     &__description-list {
       grid-template-columns: 1fr;
       gap: 24px;
     }
-
     &__development-item {
       dt {
         min-height: 0;

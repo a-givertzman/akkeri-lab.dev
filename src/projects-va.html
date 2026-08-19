@@ -7,14 +7,14 @@
 })
 
 <main class="project main">
-  @@include('html/header-section.html', {
+  @@include('html/header-project.html', {
   "indexRoute": "index.html",
   "careersRoute": "careers.html",
   "contactsRoute": "contacts.html"
   })
   <section class="project light-section" id="project__overview">
     <div class="container">
-      <div class="project-product-banner project-product-banner--operion">
+      <div class="project-product-banner project-product-banner--operion"  data-aos="fade-up">
         <img class="project-product-banner__background" src="../img/products/operion-visual.png"alt="">
         <img class="project-product-banner__logo project-product-banner__logo--operion" src="../img/products/operion-logo.svg" alt="Operion">
         <div class="project-product-banner__content project-product-banner__content--operion">
@@ -27,7 +27,7 @@
           </p>
         </div>
       </div>
-      <div class="project-product-info">
+      <div class="project-product-info"  data-aos="fade-up">
         <p class="project-product-info__lead">
           Operion.Diag — приложение для диагностики промышленного оборудования
         </p>
@@ -57,7 +57,7 @@
           </li>
         </ul>
       </div>
-      <div class="project-tabs">
+      <div class="project-tabs"  data-aos="fade-up">
         <button
           class="project-tabs__button project-tabs__button--active"
           type="button"
@@ -77,7 +77,7 @@
         class="project-tab-panel project-tab-panel--active"
         data-project-panel="description"
       >
-        <div class="project-slider" data-project-slider>
+        <div class="project-slider" data-project-slider  data-aos="fade-up">
           <button
             class="project-slider__arrow project-slider__arrow--prev"
             type="button"

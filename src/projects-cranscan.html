@@ -6,7 +6,7 @@
 "canonicalUrl": "https://sa-lab.dev/projects-cranscan.html"
 })
 <main class="project main">
-  @@include('html/header-section.html', {
+  @@include('html/header-project.html', {
   "indexRoute": "index.html",
   "careersRoute": "careers.html",
   "contactsRoute": "contacts.html"
@@ -14,7 +14,7 @@
   <section class="project light-section" id="project__overview">
     <div class="container">
       <!-- БАННЕР -->
-      <div class="project-product-banner">
+      <div class="project-product-banner" data-aos="fade-up">
         <img class="project-product-banner__background" src="../img/products/craneware_visual.png" alt="">
         <div class="project-product-banner__content">
           <h2 class="project-product-banner__title">
@@ -28,7 +28,7 @@
         <img class="project-product-banner__logo" src="../img/products/craneware-logo.svg" alt="CraneWare">
       </div>
       <!-- ИНФОРМАЦИЯ О ПРОДУКТЕ -->
-      <div class="project-product-info">
+      <div class="project-product-info" data-aos="fade-up">
         <p class="project-product-info__lead">
           CraneWare.Scan — интеллектуальная система мониторинга каната грузоподъемных механизмов
         </p>
@@ -40,7 +40,7 @@
         </p>
       </div>
       <!-- ВКЛАДКИ -->
-      <div class="project-tabs">
+      <div class="project-tabs" data-aos="fade-up">
         <button class="project-tabs__button project-tabs__button--active" type="button" data-project-tab="description">
           ОПИСАНИЕ
         </button>
@@ -50,7 +50,7 @@
       </div>
       <!-- ОПИСАНИЕ -->
       <div class="project-tab-panel project-tab-panel--active" data-project-panel="description">
-        <div class="project-slider" data-project-slider>
+        <div class="project-slider" data-project-slider data-aos="fade-up">
           <button class="project-slider__arrow project-slider__arrow--prev" type="button" data-slide-prev
             aria-label="Предыдущий слайд">
             &#10094;

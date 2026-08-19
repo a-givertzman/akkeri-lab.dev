@@ -43,6 +43,11 @@ const filesDev = () => {
   .pipe(dest('docs/files'))
 }
 
+const videoDev = () => {
+  return src(['src/video/**/*.*'], { encoding: false })
+    .pipe(dest('docs/video'))
+}
+
 const styleDev = () => {
   return src('src/css/**/*.scss')
     .pipe(sourcemaps.init())
@@ -79,7 +84,7 @@ const htmlDev = () => {
 watch('src/**/*.html', htmlDev);
 watch('src/css/**/*.scss', styleDev)
 watch('src/js/**/*.js', scriptsDev)
-
+watch('src/video/**/*.*', videoDev)
 
 export const dev = series(
   clean,
@@ -88,12 +93,10 @@ export const dev = series(
   styleDev,
   imagesDev,
   filesDev,
+  videoDev,
   htmlDev,
   watchFilesDev
 )
-
-
-
 const imagesBuild = () => {
   return src(['src/img/**/*.*'], { encoding: false })
     .pipe(image())
@@ -103,6 +106,11 @@ const imagesBuild = () => {
 const filesBuild = () => {
   return src(['src/files/**/*.*'], { encoding: false })
   .pipe(dest('docs/files'))
+}
+
+const videoBuild = () => {
+  return src(['src/video/**/*.*'], { encoding: false })
+    .pipe(dest('docs/video'))
 }
 
 const styleBuild = () => {
@@ -131,7 +139,6 @@ const htmlMinifyBuild = () => {
     )
     .pipe(dest('docs'))
 }
-
 const scriptsBuild = () => {
   return src(['src/js/*.js'])
     .pipe(concat('app.js'))
@@ -142,7 +149,6 @@ const scriptsBuild = () => {
     )
     .pipe(dest('docs/js'))
 }
-
 export const build = series(
   clean,
   scriptsBuild,
@@ -150,6 +156,7 @@ export const build = series(
   styleBuild,
   imagesBuild,
   filesBuild,
+  videoBuild,
   htmlDev,
   htmlMinifyBuild
 )

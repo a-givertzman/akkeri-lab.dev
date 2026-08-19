@@ -2,38 +2,32 @@
   padding: 50px 0;
   background-color: $blue;
   color: $white;
-
   h2 {
     color: $white;
   }
-
   &__cards {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-
   &__title {
     display: flex;
     align-items: center;
     gap: 12px;
   }
-  
   &__title-icon {
     width: 70px;
     height: 70px;
     object-fit: contain;
     flex: 0 0 auto;
   }
-
   @media (max-width: 768px) {
     &__title-icon {
       width: 40px;
       height: 40px;
     }
-  }  
+  }
 }
-
 .product-banner {
   position: relative;
   container-type: inline-size;
@@ -42,24 +36,20 @@
   overflow: hidden;
   border-radius: 7px;
   background-color: #030608;
-
   // =========================
   // ОБЩИЕ СТИЛИ
   // =========================
-
   &__background {
     display: block;
     width: 100%;
     height: auto;
   }
-
   &__logo {
     position: absolute;
     z-index: 2;
     height: auto;
     object-fit: contain;
   }
-
   &__logo-note {
     position: absolute;
     z-index: 2;
@@ -68,26 +58,22 @@
     font-weight: 700;
     line-height: 1.15;
   }
-
   &__content {
     position: absolute;
     z-index: 2;
   }
-
   &__title {
     margin: 0 0 8px;
     color: $white;
     line-height: 1;
     letter-spacing: 2px;
   }
-
   &__description {
     margin: 0;
     font-weight: 700;
     line-height: 1.15;
     text-transform: uppercase;
   }
-
   &__note {
     margin: clamp(6px, 2cqw, 20px) 0 0;
     color: #f39a32;
@@ -95,18 +81,15 @@
     line-height: 1.15;
     text-transform: uppercase;
   }
-
   // =========================
   // OPERION
   // =========================
-
   &__logo--operion {
     top: 40%;
     left: 3%;
     width: clamp(70px, 16cqw, 230px);
     transform: translateY(-50%);
   }
-
   &__logo-note--operion {
     left: 5%;
     bottom: 10%;
@@ -114,7 +97,6 @@
     font-size: clamp(5px, 1.3cqw, 15px);
     text-align: left;
   }
-
   &__content--operion {
     top: 50%;
     right: 4%;
@@ -122,34 +104,28 @@
     transform: translateY(-50%);
     text-align: right;
   }
-
   &__title--operion {
     margin-bottom: clamp(4px, 1cqw, 10px);
     font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
-
   &__description--operion {
     color: $blue-light;
     font-size: clamp(9px, 3.2cqw, 32px);
   }
-
   &__note--operion {
     margin-top: clamp(5px, 0.8cqw, 10px);
     font-size: clamp(5px, 1.05cqw, 13px);
   }
-
   // =========================
   // CRANEWARE
   // =========================
-
   &__logo--craneware {
     top: 50%;
     right: 3%;
     width: clamp(70px, 16cqw, 230px);
     transform: translateY(-50%);
   }
-
   &__content--craneware {
     top: 52%;
     left: 3%;
@@ -157,35 +133,29 @@
     transform: translateY(-50%);
     text-align: left;
   }
-
   &__title--craneware {
     margin-bottom: clamp(4px, 1cqw, 10px);
     font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
-
   &__description--craneware {
     color: $blue-light;
     font-size: clamp(9px, 3.2cqw, 32px);
     text-align: left;
   }
-
   &__note--craneware {
     font-size: clamp(5px, 1.05cqw, 13px);
     text-align: left;
   }
-
   // =========================
   // BOARDTRIX
   // =========================
-
   &__logo--boardtrix {
     top: 50%;
     left: 5%;
     width: clamp(70px, 16cqw, 230px);
     transform: translateY(-50%);
   }
-
   &__content--boardtrix {
     top: 48%;
     right: 3%;
@@ -193,134 +163,103 @@
     transform: translateY(-50%);
     text-align: right;
   }
-
   &__title--boardtrix {
     margin-bottom: clamp(4px, 1cqw, 10px);
     font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
-
   &__description--boardtrix {
     color: #079ec1;
     font-size: clamp(9px, 3.2cqw, 30px);
   }
-
   &__note--boardtrix {
     font-size: clamp(5px, 1cqw, 12px);
   }
-
   // =========================
   // МОБИЛЬНАЯ ВЕРСИЯ
   // =========================
-
   @media (max-width: 768px) {
-    
     // Operion
-
     &__logo--operion {
       left: 3%;
       width: 18%;
     }
-
     &__content--operion {
       top: 52%;
       right: 3%;
       width: 40%;
     }
-  
     &__title--operion {
       margin-bottom: 3px;
       font-size: 7cqw;
     }
-  
     &__description--operion {
       font-size: 2.5cqw;
       line-height: 1.1;
     }
-  
     &__note--operion {
       margin-top: 4px;
       font-size: 1.2cqw;
       line-height: 1.1;
     }
-
     // CraneWare
-
     &__logo--craneware {
       right: 3%;
       width: 18%;
     }
-
     &__content--craneware {
       left: 3%;
       width: 58%;
     }
-
     // BoardTrix
-
     &__logo--boardtrix {
       left: 4%;
       width: 20%;
     }
-
     &__content--boardtrix {
       right: 3%;
       width: 48%;
     }
-
   }
 }
-
 // =========================
 // КАРТОЧКА ПРОДУКТА
 // =========================
-
 .product-card {
   width: 100%;
   margin-bottom: 40px;
 }
-
 // =========================
 // КНОПКИ ПОД БАННЕРАМИ
 // =========================
-
 .product-actions {
   display: grid;
   container-type: inline-size;
   width: 100%;
   gap: 10px;
   margin-top: 10px;
-
   &--operion {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-
   &--craneware {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   &--boardtrix {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
   @media (max-width: 768px) {
     gap: 8px;
-
     &--operion {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     &--craneware {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     &--boardtrix {
       grid-template-columns: 1fr;
     }
   }
-
   @media (max-width: 480px) {
-
     &--operion,
     &--craneware,
     &--boardtrix {
@@ -328,28 +267,22 @@
     }
   }
 }
-
 // =========================
 // ОДНА КНОПКА
 // =========================
-
 .product-action {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
-
   width: 100%;
   min-width: 0;
   min-height: 60px;
   padding: 10px 12px;
-
   border: 0;
   border-radius: 3px;
-
   background-color: $blue-light;
   color: $white;
-
   font: inherit;
   font-size: clamp(10px, 1.4cqw, 15px);
   font-weight: 800;
@@ -357,16 +290,12 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-
   cursor: pointer;
   appearance: none;
-
   transition:
-  background-color 0.2s ease,
-  box-shadow 0.2s ease;
-
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
   // Наведение только на устройствах с мышкой
-
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: #f39a32;
@@ -374,15 +303,12 @@
       box-shadow: 0 4px 12px rgba($black, 0.18);
     }
   }
-
   // Нажатие на телефоне и компьютере
-
   &:active {
     background-color: #079ec1;
     color: $white;
     box-shadow: none;
   }
-
   &--disabled {
     position: relative;
     background-color: #7b8491;
@@ -390,13 +316,11 @@
     cursor: not-allowed;
     opacity: 0.75;
     user-select: none;
-
     &:hover {
       color: rgba($white, 0.8);
       filter: none;
       transform: none;
     }
-
     &:active {
       background-color: #7b8491;
       color: rgba($white, 0.8);
@@ -404,27 +328,21 @@
       filter: none;
       transform: none;
     }
-
     &::before {
       position: absolute;
       bottom: calc(100% + 8px);
       left: 50%;
       z-index: 10;
-
       padding: 6px 10px;
       border-radius: 4px;
-
       background-color: #11151c;
       color: $white;
-
       font-size: 12px;
       font-weight: 600;
       line-height: 1;
       text-transform: none;
       white-space: nowrap;
-
       content: attr(data-tooltip);
-
       opacity: 0;
       pointer-events: none;
       transform: translate(-50%, 4px);
@@ -432,68 +350,53 @@
         opacity 0.2s ease,
         transform 0.2s ease;
     }
-
     &::after {
       position: absolute;
       bottom: calc(100% + 3px);
       left: 50%;
       z-index: 9;
-
       width: 8px;
       height: 8px;
-
       background-color: #11151c;
       content: "";
-
       opacity: 0;
       pointer-events: none;
       transform: translateX(-50%) rotate(45deg);
       transition: opacity 0.2s ease;
     }
-
     &:hover::before,
     &:hover::after {
       opacity: 1;
     }
-
     &:hover::before {
       transform: translate(-50%, 0);
     }
   }
-
   &__icon {
     display: block;
     flex: 0 0 20px;
-
     width: 20px;
     min-width: 20px;
     max-width: 20px;
-
     height: 20px;
     min-height: 20px;
     max-height: 20px;
-
     object-fit: contain;
   }
-
   &__text {
     display: block;
     min-width: 0;
     white-space: nowrap;
   }
-
   @media (max-width: 768px) {
     min-height: 52px;
     padding: 8px 10px;
     font-size: 11px;
-
     &__icon {
       flex-basis: 18px;
-
       width: 18px;
       min-width: 18px;
       max-width: 18px;
-
       height: 18px;
       min-height: 18px;
       max-height: 18px;
