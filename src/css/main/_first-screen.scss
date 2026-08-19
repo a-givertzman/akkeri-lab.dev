@@ -146,3 +146,16 @@
     }
   }
 }
+#about,
+#activities,
+#projects {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 768px) {
+  #about,
+  #activities,
+  #projects {
+    scroll-margin-top: 65px;
+  }
+}

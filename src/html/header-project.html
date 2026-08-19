@@ -1,24 +1,38 @@
 <header class="project-header">
     <div class="container project-header__container">
-        <nav class="project-header__nav">
-            <a href="@@indexRoute#about" class="project-header__link">
-                О нас
-            </a>
-            <a href="@@indexRoute#activities" class="project-header__link">
-                Направления
-            </a>
-            <a href="@@indexRoute#projects" class="project-header__link">
-                Продукты
-            </a>
-            <a href="@@careersRoute#careers" class="project-header__link">
-                Вакансии
-            </a>
-            <a href="@@contactsRoute#contacts" class="project-header__link">
-                Контакты
-            </a>
-        </nav>
-        <a class="project-header__logo" href="@@indexRoute">
-            <img src="/img/sa-logo.svg" alt="S&A lab">
+      <nav
+        class="project-header__nav"
+        id="projectHeaderNav"
+      >
+        <a href="@@indexRoute#about" class="project-header__link">
+          О КОМПАНИИ
         </a>
+        <a href="@@indexRoute#activities" class="project-header__link">
+          РАЗРАБОТКИ
+        </a>
+        <a href="@@indexRoute#projects" class="project-header__link">
+          ПРОДУКТЫ
+        </a>
+        <a href="@@careersRoute#careers" class="project-header__link">
+          ВАКАНСИИ
+        </a>
+        <a href="@@contactsRoute#contacts" class="project-header__link">
+          КОНТАКТЫ
+        </a>
+      </nav>
+      <a class="project-header__logo" href="@@indexRoute">
+        <img src="/img/sa-logo.svg" alt="S&A lab">
+      </a>
+      <button
+        class="project-header__burger"
+        id="projectHeaderBurger"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-</header>
+  </header>
