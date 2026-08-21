@@ -825,13 +825,17 @@
   &__burger {
     display: none;
   }
+  &__overlay {
+    display: none;
+  }
   @media (hover: hover) and (pointer: fine) {
     &__link:hover {
       color: $blue-light;
     }
   }
-  @media (max-width: 768px) {
-    padding: 10px 0;
+  @media (max-width: 1350px) {
+    top: -8px;
+    padding: 14px 0;
     &__container {
       position: relative;
       display: flex;
@@ -867,6 +871,19 @@
         transition: transform 0.25s ease, opacity 0.25s ease;
       }
     }
+    &__overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: block;
+      background: rgba(0, 0, 0, 0.65);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    }
     &__nav {
       position: absolute;
       top: calc(100% + 10px);
@@ -897,6 +914,11 @@
       text-align: left;
     }
     &--open {
+      .project-header__overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
       .project-header__nav {
         opacity: 1;
         visibility: visible;
@@ -916,4 +938,12 @@
       }
     }
   }
+}
+html.project-menu-open,
+body.project-menu-open {
+  overflow: hidden;
+}
+body.project-menu-open {
+  position: fixed;
+  width: 100%;
 }
