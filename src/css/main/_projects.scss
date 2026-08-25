@@ -16,10 +16,10 @@
     gap: 12px;
   }
   &__title-icon {
+    flex: 0 0 auto;
     width: 70px;
     height: 70px;
     object-fit: contain;
-    flex: 0 0 auto;
   }
   @media (max-width: 768px) {
     &__title-icon {
@@ -28,6 +28,9 @@
     }
   }
 }
+// =========================
+// БАННЕР ПРОДУКТА
+// =========================
 .product-banner {
   position: relative;
   container-type: inline-size;
@@ -49,14 +52,6 @@
     z-index: 2;
     height: auto;
     object-fit: contain;
-  }
-  &__logo-note {
-    position: absolute;
-    z-index: 2;
-    margin: 0;
-    color: $white;
-    font-weight: 700;
-    line-height: 1.15;
   }
   &__content {
     position: absolute;
@@ -82,40 +77,48 @@
     text-transform: uppercase;
   }
   // =========================
+  // ЕДИНЫЕ РАЗМЕРЫ ШРИФТОВ
+  // =========================
+  &__title--operion,
+  &__title--craneware,
+  &__title--boardtrix {
+    font-size: clamp(24px, 9cqw, 150px);
+  }
+  &__description--operion,
+  &__description--craneware,
+  &__description--boardtrix {
+    font-size: clamp(9px, 2.2cqw, 80px);
+  }
+  &__note--operion,
+  &__note--craneware,
+  &__note--boardtrix {
+    font-size: clamp(5px, 1.5cqw, 18px);
+  }
+  // =========================
   // OPERION
   // =========================
   &__logo--operion {
-    top: 40%;
-    left: 3%;
+    top: 50%;
+    left: 5%;
     width: clamp(70px, 16cqw, 230px);
     transform: translateY(-50%);
-  }
-  &__logo-note--operion {
-    left: 5%;
-    bottom: 10%;
-    width: 20%;
-    font-size: clamp(5px, 1.3cqw, 15px);
-    text-align: left;
   }
   &__content--operion {
     top: 50%;
     right: 4%;
     width: 38%;
-    transform: translateY(-50%);
     text-align: right;
+    transform: translateY(-50%);
   }
   &__title--operion {
     margin-bottom: clamp(4px, 1cqw, 10px);
-    font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
   &__description--operion {
     color: $blue-light;
-    font-size: clamp(9px, 3.2cqw, 32px);
   }
   &__note--operion {
     margin-top: clamp(5px, 0.8cqw, 10px);
-    font-size: clamp(5px, 1.05cqw, 13px);
   }
   // =========================
   // CRANEWARE
@@ -130,21 +133,18 @@
     top: 52%;
     left: 3%;
     width: 50%;
-    transform: translateY(-50%);
     text-align: left;
+    transform: translateY(-50%);
   }
   &__title--craneware {
     margin-bottom: clamp(4px, 1cqw, 10px);
-    font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
   &__description--craneware {
     color: $blue-light;
-    font-size: clamp(9px, 3.2cqw, 32px);
     text-align: left;
   }
   &__note--craneware {
-    font-size: clamp(5px, 1.05cqw, 13px);
     text-align: left;
   }
   // =========================
@@ -157,52 +157,62 @@
     transform: translateY(-50%);
   }
   &__content--boardtrix {
-    top: 48%;
+    top: 50%;
     right: 3%;
     width: 43%;
-    transform: translateY(-50%);
     text-align: right;
+    transform: translateY(-50%);
   }
   &__title--boardtrix {
     margin-bottom: clamp(4px, 1cqw, 10px);
-    font-size: clamp(24px, 8.8cqw, 95px);
     white-space: nowrap;
   }
   &__description--boardtrix {
     color: #079ec1;
-    font-size: clamp(9px, 3.2cqw, 30px);
-  }
-  &__note--boardtrix {
-    font-size: clamp(5px, 1cqw, 12px);
   }
   // =========================
   // МОБИЛЬНАЯ ВЕРСИЯ
   // =========================
   @media (max-width: 768px) {
-    // Operion
+    // -------------------------
+    // ЕДИНЫЕ РАЗМЕРЫ ШРИФТОВ
+    // -------------------------
+    &__title--operion,
+    &__title--craneware,
+    &__title--boardtrix {
+      font-size: 9cqw;
+    }
+    &__description--operion,
+    &__description--craneware,
+    &__description--boardtrix {
+      font-size: 3cqw;
+      line-height: 1.1;
+    }
+    &__note--operion,
+    &__note--craneware,
+    &__note--boardtrix {
+      margin-top: 4px;
+      font-size: 1.5cqw;
+      line-height: 1.1;
+    }
+    // -------------------------
+    // OPERION
+    // -------------------------
     &__logo--operion {
       left: 3%;
       width: 18%;
     }
+    &__title--operion {
+      top: 20%;
+    }
     &__content--operion {
       top: 52%;
       right: 3%;
-      width: 40%;
+      width: 50%;
     }
-    &__title--operion {
-      margin-bottom: 3px;
-      font-size: 7cqw;
-    }
-    &__description--operion {
-      font-size: 2.5cqw;
-      line-height: 1.1;
-    }
-    &__note--operion {
-      margin-top: 4px;
-      font-size: 1.2cqw;
-      line-height: 1.1;
-    }
-    // CraneWare
+    // -------------------------
+    // CRANEWARE
+    // -------------------------
     &__logo--craneware {
       right: 3%;
       width: 18%;
@@ -211,7 +221,9 @@
       left: 3%;
       width: 58%;
     }
-    // BoardTrix
+    // -------------------------
+    // BOARDTRIX
+    // -------------------------
     &__logo--boardtrix {
       left: 4%;
       width: 20%;
@@ -227,7 +239,7 @@
 // =========================
 .product-card {
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 // =========================
 // КНОПКИ ПОД БАННЕРАМИ
@@ -295,7 +307,9 @@
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease;
-  // Наведение только на устройствах с мышкой
+  // =========================
+  // НАВЕДЕНИЕ
+  // =========================
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: #f39a32;
@@ -303,12 +317,17 @@
       box-shadow: 0 4px 12px rgba($black, 0.18);
     }
   }
-  // Нажатие на телефоне и компьютере
+  // =========================
+  // НАЖАТИЕ
+  // =========================
   &:active {
     background-color: #079ec1;
     color: $white;
     box-shadow: none;
   }
+  // =========================
+  // НЕДОСТУПНАЯ КНОПКА
+  // =========================
   &--disabled {
     position: relative;
     background-color: #7b8491;
@@ -372,6 +391,9 @@
       transform: translate(-50%, 0);
     }
   }
+  // =========================
+  // ИКОНКА
+  // =========================
   &__icon {
     display: block;
     flex: 0 0 20px;
@@ -383,15 +405,21 @@
     max-height: 20px;
     object-fit: contain;
   }
+  // =========================
+  // ТЕКСТ
+  // =========================
   &__text {
     display: block;
     min-width: 0;
     white-space: nowrap;
   }
+  // =========================
+  // MOBILE
+  // =========================
   @media (max-width: 768px) {
     min-height: 52px;
     padding: 8px 10px;
-    font-size: 11px;
+    font-size: 0.8rem;
     &__icon {
       flex-basis: 18px;
       width: 18px;

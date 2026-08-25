@@ -6,6 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!startVideo || !startVideoArrow || !startVideoScale) return;
   let menuHover = false;
   // =========================
+  // AUTOPLAY ДЛЯ МОБИЛЬНЫХ
+  // =========================
+  startVideo.muted = true;
+  startVideo.defaultMuted = true;
+  startVideo.playsInline = true;
+  startVideo.setAttribute('muted', '');
+  startVideo.setAttribute('playsinline', '');
+  startVideo.setAttribute('webkit-playsinline', '');
+  const tryPlayVideo = () => {
+    const playPromise = startVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Safari/iOS может запретить autoplay.
+        // Тогда видео запустится при первом касании страницы.
+      });
+    }
+  };
+  // Сразу пробуем запустить
+  tryPlayVideo();
+  // И ещё раз, когда видео готово к воспроизведению
+  startVideo.addEventListener('canplay', tryPlayVideo, { once: true });
+  // Если iPhone всё-таки заблокировал autoplay,
+  // первое касание страницы запустит видео.
+  const startOnInteraction = () => {
+    if (startVideo.paused) {
+      startVideo.play().catch(() => {});
+    }
+  };
+  document.addEventListener('touchstart', startOnInteraction, {
+    once: true,
+    passive: true
+  });
+  document.addEventListener('click', startOnInteraction, {
+    once: true
+  });
+  // =========================
   // ДВИЖЕНИЕ ПО ВРЕМЕНИ ВИДЕО
   // =========================
   const updateStartVideoProgress = () => {
