@@ -22,15 +22,20 @@
     object-fit: contain;
   }
   @media (max-width: 768px) {
+    .container {
+      width: calc(100% - 56px);
+      max-width: none;
+      margin: 0 auto;
+    }
     &__title-icon {
       width: 40px;
       height: 40px;
     }
   }
 }
-// =========================
+// ==================================================
 // БАННЕР ПРОДУКТА
-// =========================
+// ==================================================
 .product-banner {
   position: relative;
   container-type: inline-size;
@@ -39,9 +44,13 @@
   overflow: hidden;
   border-radius: 7px;
   background-color: #030608;
-  // =========================
+  // ==================================================
   // ОБЩИЕ СТИЛИ
-  // =========================
+  // ==================================================
+  picture {
+    display: block;
+    width: 100%;
+  }
   &__background {
     display: block;
     width: 100%;
@@ -76,9 +85,13 @@
     line-height: 1.15;
     text-transform: uppercase;
   }
-  // =========================
-  // ЕДИНЫЕ РАЗМЕРЫ ШРИФТОВ
-  // =========================
+  // Белая подпись есть только у Operion на mobile
+  &__extra {
+    display: none;
+  }
+  // ==================================================
+  // ЕДИНЫЕ DESKTOP-ШРИФТЫ
+  // ==================================================
   &__title--operion,
   &__title--craneware,
   &__title--boardtrix {
@@ -94,9 +107,9 @@
   &__note--boardtrix {
     font-size: clamp(5px, 1.5cqw, 18px);
   }
-  // =========================
-  // OPERION
-  // =========================
+  // ==================================================
+  // OPERION — DESKTOP
+  // ==================================================
   &__logo--operion {
     top: 50%;
     left: 5%;
@@ -120,9 +133,9 @@
   &__note--operion {
     margin-top: clamp(5px, 0.8cqw, 10px);
   }
-  // =========================
-  // CRANEWARE
-  // =========================
+  // ==================================================
+  // CRANEWARE — DESKTOP
+  // ==================================================
   &__logo--craneware {
     top: 50%;
     right: 3%;
@@ -130,7 +143,7 @@
     transform: translateY(-50%);
   }
   &__content--craneware {
-    top: 52%;
+    top: 60%;
     left: 3%;
     width: 50%;
     text-align: left;
@@ -147,9 +160,9 @@
   &__note--craneware {
     text-align: left;
   }
-  // =========================
-  // BOARDTRIX
-  // =========================
+  // ==================================================
+  // BOARDTRIX — DESKTOP
+  // ==================================================
   &__logo--boardtrix {
     top: 50%;
     left: 5%;
@@ -170,80 +183,222 @@
   &__description--boardtrix {
     color: #079ec1;
   }
-  // =========================
-  // МОБИЛЬНАЯ ВЕРСИЯ
-  // =========================
+  // ==================================================
+  // MOBILE
+  // ==================================================
   @media (max-width: 768px) {
-    // -------------------------
-    // ЕДИНЫЕ РАЗМЕРЫ ШРИФТОВ
-    // -------------------------
+    // ==================================================
+    // РАЗМЕРЫ МОБИЛЬНЫХ БАННЕРОВ
+    // ==================================================
+    &--operion,
+    &--craneware {
+      aspect-ratio: 374 / 330;
+    }
+    &--boardtrix {
+      aspect-ratio: 374 / 340;
+    }
+    // ==================================================
+    // МОБИЛЬНЫЙ ФОН
+    // ==================================================
+    picture {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &__background {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    // ==================================================
+    // ОБЩИЕ MOBILE-ЭЛЕМЕНТЫ
+    // ==================================================
+    &__logo {
+      position: absolute;
+      z-index: 2;
+      height: auto;
+      object-fit: contain;
+      transform: none;
+    }
+    &__content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transform: none;
+    }
+    // ==================================================
+    // ЕДИНАЯ MOBILE-ТИПОГРАФИКА
     &__title--operion,
     &__title--craneware,
     &__title--boardtrix {
-      font-size: 9cqw;
+      position: absolute;
+      margin: 0;
+      font-size: 11.90cqw;
+      font-weight: 790;
+      line-height: 1.1;
+      letter-spacing: 0;
     }
     &__description--operion,
     &__description--craneware,
     &__description--boardtrix {
-      font-size: 3cqw;
+      position: absolute;
+      margin: 0;
+      font-size: 3.74cqw;
+      font-weight: 500;
       line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
     }
     &__note--operion,
     &__note--craneware,
     &__note--boardtrix {
-      margin-top: 4px;
-      font-size: 1.5cqw;
+      position: absolute;
+      margin: 0;
+      font-size: 3.21cqw;
+      font-weight: 600;
       line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
     }
-    // -------------------------
-    // OPERION
-    // -------------------------
+    // ==================================================
+    // OPERION — MOBILE
     &__logo--operion {
-      left: 3%;
-      width: 18%;
-    }
-    &__title--operion {
-      top: 20%;
+      top: 3cqw;
+      left: 3cqw;
+      right: auto;
+      width: 27.50cqw;
+      transform: none;
     }
     &__content--operion {
-      top: 52%;
-      right: 3%;
-      width: 50%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
     }
-    // -------------------------
-    // CRANEWARE
-    // -------------------------
+    &__title--operion {
+      top: 33.16cqw;
+      left: 3cqw;
+      width: 61.50cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--operion {
+      top: 50.27cqw;
+      left: 3cqw;
+      width: 50.27cqw;
+      color: $blue-light;
+      text-align: left;
+    }
+    &__note--operion {
+      top: 67.11cqw;
+      left: 3cqw;
+      width: 63.90cqw;
+      color: #f39a32;
+      text-align: left;
+    }
+    &__extra--operion {
+      position: absolute;
+      top: 76.47cqw;
+      left: 3cqw;
+      z-index: 2;
+      display: block;
+      width: 93.58cqw;
+      margin: 0;
+      color: $white;
+      font-size: 3.48cqw;
+      font-weight: 600;
+      line-height: 1;
+      text-align: left;
+    }
+    // CRANEWARE — MOBILE
     &__logo--craneware {
-      right: 3%;
-      width: 18%;
+      top: 1.60cqw;
+      left: 1.60cqw;
+      right: auto;
+      width: 29.95cqw;
+      transform: none;
     }
     &__content--craneware {
-      left: 3%;
-      width: 58%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
     }
-    // -------------------------
-    // BOARDTRIX
-    // -------------------------
+    &__title--craneware {
+      top: 38cqw;
+      left: 2.14cqw;
+      width: 71.93cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--craneware {
+      top: 53.08cqw;
+      left: 2.14cqw;
+      width: 60%;
+      color: $blue-light;
+      text-align: left;
+    }
+    &__note--craneware {
+      top: 68.93cqw;
+      left: 2.14cqw;
+      width: 70%;
+      color: #f39a32;
+      text-align: left;
+    }
+    // ==================================================
+    // BOARDTRIX — MOBILE
     &__logo--boardtrix {
-      left: 4%;
-      width: 20%;
+      top: 3cqw;
+      left: 3cqw;
+      right: auto;
+      width: 27.46cqw;
+      transform: none;
     }
     &__content--boardtrix {
-      right: 3%;
-      width: 48%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+    &__title--boardtrix {
+      top: 3cqw;
+      left: 33.69cqw;
+      width: 64.44cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--boardtrix {
+      top: 18.18cqw;
+      left: 34.49cqw;
+      width: 40.91cqw;
+      color: #079ec1;
+      text-align: left;
+    }
+    &__note--boardtrix {
+      top: 34.76cqw;
+      left: 3.48cqw;
+      width: 80.21cqw;
+      color: #f39a32;
+      text-align: left;
     }
   }
 }
-// =========================
+// ==================================================
 // КАРТОЧКА ПРОДУКТА
-// =========================
+// ==================================================
 .product-card {
   width: 100%;
   margin-bottom: 25px;
 }
-// =========================
+// ==================================================
 // КНОПКИ ПОД БАННЕРАМИ
-// =========================
+// ==================================================
 .product-actions {
   display: grid;
   container-type: inline-size;
@@ -261,17 +416,6 @@
   }
   @media (max-width: 768px) {
     gap: 8px;
-    &--operion {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    &--craneware {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    &--boardtrix {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (max-width: 480px) {
     &--operion,
     &--craneware,
     &--boardtrix {
@@ -279,9 +423,9 @@
     }
   }
 }
-// =========================
+// ==================================================
 // ОДНА КНОПКА
-// =========================
+// ==================================================
 .product-action {
   display: flex;
   align-items: center;
@@ -307,9 +451,9 @@
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease;
-  // =========================
-  // НАВЕДЕНИЕ
-  // =========================
+  // ==================================================
+  // HOVER
+  // ==================================================
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: #f39a32;
@@ -317,17 +461,17 @@
       box-shadow: 0 4px 12px rgba($black, 0.18);
     }
   }
-  // =========================
-  // НАЖАТИЕ
-  // =========================
+  // ==================================================
+  // ACTIVE
+  // ==================================================
   &:active {
     background-color: #079ec1;
     color: $white;
     box-shadow: none;
   }
-  // =========================
-  // НЕДОСТУПНАЯ КНОПКА
-  // =========================
+  // ==================================================
+  // DISABLED
+  // ==================================================
   &--disabled {
     position: relative;
     background-color: #7b8491;
@@ -391,9 +535,9 @@
       transform: translate(-50%, 0);
     }
   }
-  // =========================
+  // ==================================================
   // ИКОНКА
-  // =========================
+  // ==================================================
   &__icon {
     display: block;
     flex: 0 0 20px;
@@ -405,21 +549,23 @@
     max-height: 20px;
     object-fit: contain;
   }
-  // =========================
+  // ==================================================
   // ТЕКСТ
-  // =========================
+  // ==================================================
   &__text {
     display: block;
     min-width: 0;
     white-space: nowrap;
   }
-  // =========================
+  // ==================================================
   // MOBILE
-  // =========================
+  // ==================================================
   @media (max-width: 768px) {
     min-height: 52px;
     padding: 8px 10px;
-    font-size: 0.8rem;
+    font-size: clamp(14px, 5.35cqw, 20px);
+    font-weight: 800;
+    line-height: 1;
     &__icon {
       flex-basis: 18px;
       width: 18px;
