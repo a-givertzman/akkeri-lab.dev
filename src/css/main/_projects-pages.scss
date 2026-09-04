@@ -857,7 +857,7 @@
   &__container {
     display: flex;
     align-items: center;
-    width: calc(100% - 600px);
+    width: calc(100% - clamp(120px, 31.25vw, 600px));
     max-width: none;
     margin: 0 auto;
     padding: 0;

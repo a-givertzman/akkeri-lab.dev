@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = startVideo.currentTime / startVideo.duration;
       startVideoArrow.style.left = `${progress * 100}%`;
     }
-    requestAnimationFrame(updateStartVideoProgress);
   };
+  startVideo.addEventListener('timeupdate', updateStartVideoProgress);
+  startVideo.addEventListener('loadedmetadata', updateStartVideoProgress);
   // =========================
   // НАВЕДЕНИЕ НА МЕНЮ
   // =========================
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     link.addEventListener('mouseleave', () => {
       menuHover = false;
+      updateStartVideoProgress();
     });
   });
-  updateStartVideoProgress();
 });
