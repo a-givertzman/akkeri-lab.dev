@@ -19,13 +19,12 @@ jobs:
       # Here is the deployment action
       - name: Upload bundle via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        # uses: airvzxf/ftp-deployment-action@v2
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./docs/"
           server-dir: "docs/"
-          # remote_dir: "/docs"
-          # delete: "true"
-          # ftp_ssl_allow: "false"
+          protocol: ftp       # Явно указываем обычный FTP, чтобы избежать сбоев TLS-дата-сокетов
+          security: loose     # Отключает строгую проверку сертификатов
+          timeout: 600000     # Увеличивает время ожидания ответа сервера до 10 минут
