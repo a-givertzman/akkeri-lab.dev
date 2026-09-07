@@ -24,8 +24,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./docs"
-          server-dir: "/docs"
+          local-dir: "./docs/"
+          server-dir: "/docs/"
           # remote_dir: "/docs"
           # delete: "true"
           # ftp_ssl_allow: "false"
