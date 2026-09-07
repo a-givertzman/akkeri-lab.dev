@@ -1,4 +1,4 @@
-name: CI - Deploy to sa-lab.dev
+name: 'CI - Deploy to sa-lab.dev'
 on:
   push:
     branches: [ main ]
@@ -18,7 +18,7 @@ jobs:
 
       # Here is the deployment action
       - name: Upload bundle via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         # uses: airvzxf/ftp-deployment-action@v2
         with:
           server: ${{ secrets.FTP_SERVER }}
