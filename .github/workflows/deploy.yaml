@@ -1,4 +1,4 @@
-name: CI -> Deploy to My website
+name: CI | Deploy to sa-lab.dev
 on:
   push:
     branches: [ main ]
@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # debug
       - name: Checkout sources
         run: |
@@ -17,8 +17,10 @@ jobs:
             echo "${{ secrets.FTP_PASSWORD }}"
 
       # Here is the deployment action
-      - name: Upload from public_html via FTP
+      - name: Upload bundle via FTP
         uses: airvzxf/ftp-deployment-action@v2
+        env:
+          HOME: /root
         with:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
