@@ -5,114 +5,246 @@
 "description": "Программно-аппаратный комплекс для контроля состояния каната в реальном времени",
 "canonicalUrl": "https://sa-lab.dev/projects-cranscan.html"
 })
-
 <main class="project main">
-  @@include('html/header-section.html', {
+  @@include('html/header-project.html', {
   "indexRoute": "index.html",
   "careersRoute": "careers.html",
   "contactsRoute": "contacts.html"
   })
   <section class="project light-section" id="project__overview">
     <div class="container">
-      <h2 data-aos="fade-up">CRANSCAN &mdash; интеллектуальная система мониторинга каната грузоподъемных механизмов</h2>
-      <div data-aos="fade-up">Наш продукт – это программно-аппаратный комплекс для непрерывного контроля
-        состояния каната в реальном времени. Система автоматически выявляет дефекты, оценивает степень
-        износа отдельных участков и прогнозирует остаточный ресурс каната, обеспечивая безопасную и
-        эффективную эксплуатацию грузоподъёмного оборудования.
+      <!-- БАННЕР -->
+      <div class="project-product-banner project-product-banner--craneware" data-aos="fade-up">
+        <picture class="project-product-banner__picture">
+          <source media="(max-width: 768px)" srcset="../img/products/craneware-visual-mobile.png">
+          <img class="project-product-banner__background" src="../img/products/craneware-visual.png" alt="">
+        </picture>
+        <div class="project-product-banner__content project-product-banner__content--craneware">
+          <h2 class="project-product-banner__title project-product-banner__title--craneware">
+            CraneWare.Scan
+          </h2>
+          <p class="project-product-banner__description project-product-banner__description--craneware">
+            ИНТЕЛЛЕКТУАЛЬНАЯ СИСТЕМА МОНИТОРИНГА КАНАТА<br>
+            ГРУЗОПОДЪЕМНЫХ МЕХАНИЗМОВ
+          </p>
+        </div>
+        <img class="project-product-banner__logo project-product-banner__logo--craneware" src="../img/products/craneware-logo.svg" alt="CraneWare">
       </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-perspective.png" alt="perspective" class="project__img">
+      <!-- ИНФОРМАЦИЯ О ПРОДУКТЕ -->
+      <div class="project-product-info" data-aos="fade-up">
+        <p class="project-product-info__lead">
+          CraneWare.Scan — интеллектуальная система мониторинга каната грузоподъемных механизмов
+        </p>
+        <p class="project-product-info__text">
+          Наш продукт — это программно-аппаратный комплекс для непрерывного контроля
+          состояния каната в реальном времени. Система автоматически выявляет дефекты,
+          оценивает степень износа отдельных участков и прогнозирует остаточный ресурс
+          каната, обеспечивая безопасную и эффективную эксплуатацию грузоподъёмного оборудования.
+        </p>
       </div>
-      <br>
-      <strong>Для получения информации о способах приобретения права использования наших продуктов и стоимости их использования свяжитесь с нами по почте:</strong> <a class="project__contact-us" href="mailto:info@sa-lab.dev?subject=Приложение BoardTrix">info@sa-lab.dev</a>
-      <br>
-      <br>
-      🖨️ <a class="project__contact-us" href="../files/cranscan/CRANSCAN_project_presentation.pdf">CRANSCAN_Презентация_проекта.pdf</a><br>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__visual_control">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Визуальный контроль поверхности каната</h3>
-        <div>Четыре камеры, расположенные под углом 90°, обеспечивают полный охват поверхности каната с расстояния 200 мм.</div>
+      <!-- ВКЛАДКИ -->
+      <div class="project-tabs" data-aos="fade-up">
+        <button class="project-tabs__button project-tabs__button--active" type="button" data-project-tab="description">
+          ОПИСАНИЕ
+        </button>
+        <button class="project-tabs__button" type="button" data-project-tab="support">
+          ПОДДЕРЖКА
+        </button>
       </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-box.png" alt="box" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__scans">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Автоматическое обнаружение дефектов</h3>
-        <div>
-          <ul>Двухступенчатый алгоритм анализа:
-            <li><strong>FastScan</strong>: быстрое сканирование по контуру с предварительной обработкой изображений (коррекция освещения, бинаризация по методу Отсу, выделение границ);</li>
-            <li><strong>FineScan</strong>: детальный анализ подозрительных участков с использованием цветовых гистограмм.</li>
-          </ul>
+      <!-- ОПИСАНИЕ -->
+      <div class="project-tab-panel project-tab-panel--active" data-project-panel="description">
+        <div class="project-slider" data-project-slider data-aos="fade-up">
+          <button class="project-slider__arrow project-slider__arrow--prev" type="button" data-slide-prev
+            aria-label="Предыдущий слайд">
+            &#10094;
+          </button>
+          <div class="project-slider__slides">
+            <!-- СЛАЙД 1 -->
+            <div class="project-slide project-slide--active">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-perspective.png" alt="Система CraneWare.Scan">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Мониторинг состояния каната</h3>
+                  <div>
+                    Программно-аппаратный комплекс обеспечивает непрерывный контроль
+                    состояния каната в реальном времени, выявляет дефекты, оценивает
+                    износ отдельных участков и позволяет прогнозировать остаточный ресурс.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- СЛАЙД 2 -->
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-box.png" alt="Визуальный контроль поверхности каната">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Визуальный контроль поверхности каната</h3>
+                  <div>
+                    Четыре камеры, расположенные под углом 90°, обеспечивают
+                    полный охват поверхности каната с расстояния 200 мм.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- СЛАЙД 3 -->
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-fast-fine.png" alt="Автоматическое обнаружение дефектов">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Автоматическое обнаружение дефектов</h3>
+                  <div>
+                    <p>Двухступенчатый алгоритм анализа:</p>
+                    <ul class="project-slide__list">
+                      <li>
+                        <strong>FastScan</strong>: быстрое сканирование по контуру
+                        с предварительной обработкой изображений — коррекция освещения,
+                        бинаризация по методу Отсу и выделение границ.
+                      </li>
+                      <li>
+                        <strong>FineScan</strong>: детальный анализ подозрительных
+                        участков с использованием цветовых гистограмм.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- СЛАЙД 4 -->
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-estimations.png" alt="Оценка износа каната">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Оценка износа с учётом реальных условий эксплуатации</h3>
+                  <div>
+                    <p>
+                      Система учитывает не только визуальные повреждения,
+                      но и накопленную усталость каната, рассчитывая износ на основе:
+                    </p>
+                    <ul class="project-slide__list">
+                      <li>количества и радиусов перегибов на блоках;</li>
+                      <li>динамики нагрузки;</li>
+                      <li>угла наклона стрел и конфигурации крана;</li>
+                      <li>внешних факторов, например качки на судне.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- СЛАЙД 5 -->
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-contour.png" alt="Классификация дефектов каната">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Классификация дефектов</h3>
+                  <div>
+                    <p>CRANSCAN распознаёт типы повреждений:</p>
+                    <ul class="project-slide__list">
+                      <li>
+                        Местные односторонние увеличения и уменьшения диаметра каната;
+                      </li>
+                      <li>
+                        Местные двусторонние увеличения и уменьшения диаметра каната;
+                      </li>
+                      <li>
+                        Локальные нарушения структуры каната.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- СЛАЙД 6 -->
+            <div class="project-slide">
+              <div class="project-slide__content">
+                <div class="project-slide__image">
+                  <img src="../img/projects-cranscan-gui.png" alt="Интерфейс оператора CraneWare.Scan">
+                </div>
+                <div class="project-slide__description">
+                  <h3>Интерфейс оператора</h3>
+                  <div>
+                    <p>
+                      Все данные обновляются каждые 500 мс и отображаются
+                      в интуитивно понятном интерфейсе:
+                    </p>
+                    <ul class="project-slide__list">
+                      <li>
+                        график износа по длине каната с возможностью
+                        масштабирования и прокрутки;
+                      </li>
+                      <li>
+                        красные метки указывают на обнаруженные дефекты;
+                      </li>
+                      <li>
+                        доступ к снимкам с камер для каждого повреждения;
+                      </li>
+                      <li>
+                        уведомления при достижении критических значений износа;
+                      </li>
+                      <li>
+                        прогноз остаточного ресурса каната.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="project-slider__arrow project-slider__arrow--next" type="button" data-slide-next
+            aria-label="Следующий слайд">
+            &#10095;
+          </button>
+          <div class="project-slider__counter">
+            <span data-slide-current>1</span> /
+            <span data-slide-total>6</span>
+          </div>
         </div>
       </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-fast-fine.png" alt="winch" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__estimation">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Оценка износа с учётом реальных условий эксплуатации</h3>
-        <div>
-          <ul>Система учитывает не только визуальные повреждения, но и накопленную усталость каната, рассчитывая износ на основе:
-            <li>количества и радиусов перегибов на блоках;</li>
-            <li>динамики нагрузки;</li>
-            <li>угла наклона стрел и конфигурации крана;</li>
-            <li>внешних факторов (например, качки на судне).</li>
-          </ul>
+      <!-- ПОДДЕРЖКА -->
+      <div class="project-tab-panel" data-project-panel="support">
+        <div class="project-support">
+          <h3 class="project-support__title">
+            ТЕХНИЧЕСКАЯ ПОДДЕРЖКА
+          </h3>
+          <p class="project-support__text">
+            Для получения информации о способах приобретения права использования
+            наших продуктов и стоимости их использования свяжитесь с нами по почте:
+            <a href="mailto:info@sa-lab.dev?subject=CraneWare.Scan">
+              info@sa-lab.dev
+            </a>
+          </p>
+          <h4 class="project-support__subtitle">
+            ДОКУМЕНТАЦИЯ И ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ:
+          </h4>
+          <div class="project-support__docs project-support__docs--single">
+            <div class="project-support__doc">
+              <div class="project-support__pdf">
+                <iframe src="../files/cranscan/CRANSCAN_project_presentation.pdf#toolbar=0&navpanes=0"
+                  title="Презентация проекта CraneWare.Scan"></iframe>
+              </div>
+              <span class="project-support__doc-name">
+                ПРЕЗЕНТАЦИЯ ПРОЕКТА CRANEWARE.SCAN
+              </span>
+              <a class="project-support__doc-link" href="../files/cranscan/CRANSCAN_project_presentation.pdf"
+                target="_blank" rel="noopener">
+                Открыть PDF
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-estimations.png" alt="estimations" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__classes">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Классификация дефектов</h3>
-        <div>
-          <ul>CRANSCAN распознаёт типы повреждений:
-            <li>Местные односторонние увеличения и уменьшения диаметра каната;</li>
-            <li>Местные двусторонние увеличения и уменьшения диаметра каната;</li>
-            <li>Локальные нарушения структуры каната.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-contour.png" alt="contour" class="project__img">
-      </div>
-    </div>
-  </section>
-  <section class="project details-section light-section" id="project__gui">
-    <div class="container">
-      <div class="project__description" data-aos="fade-up">
-        <h3>Интерфейс оператора</h3>
-        <div>
-          <ul>Все данные обновляются каждые 500 мс и отображаются в интуитивно понятном интерфейсе:
-            <li>график износа по длине каната с возможностью масштабирования и прокрутки;</li>
-            <li>красные метки указывают на обнаруженные дефекты;</li>
-            <li>доступ к снимкам с камер для каждого повреждения;</li>
-            <li>уведомления при достижении критических значений износа;</li>
-            <li>прогноз остаточного ресурса каната.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project__img-wrapper">
-        <img src="../img/projects-cranscan-gui.png" alt="strength" class="project__img">
       </div>
     </div>
   </section>
 </main>
-
 @@include('html/footer.html', {
 "indexRoute": "index.html",
 "careersRoute": "careers.html"

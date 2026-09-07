@@ -1,86 +1,579 @@
 .projects {
+  padding: 50px 0;
   background-color: $blue;
   color: $white;
-
   h2 {
     color: $white;
   }
-
   &__cards {
-    display              : grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows   : min-content min-content;
-    gap                  : 30px;
-
-    @media (max-width: 1024px) {
-      display       : flex;
-      flex-direction: column;
-    }
-  }
-
-  &__item {
-    position     : relative;
-    border-radius: 7px;
-    padding      : 30px;
-    min-height   : 250px;
-    box-shadow   : 0px 0px 6px 0px rgba($black, 0.1);
-
-    @media (max-width:768px) {
-      padding      : 15px;
-      border-radius: 5px;
-    }
-
-    h4 {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__link {
-    display    : block;
-    font-weight: 800;
-    color      : inherit;
-    @include transition;
-  }
-
-  &__item {
-    display       : flex;
+    display: flex;
     flex-direction: column;
-
-
-    .projects__link:last-child {
-      margin-top           : auto;
-      padding-top          : 30px;
-      font-size            : 1.5rem;
-      // Underline decoration
-      text-decoration-style: wavy;
-      text-decoration-line : underline;
-      text-underline-offset: 4px;
+    width: 100%;
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &__title-icon {
+    flex: 0 0 auto;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+  @media (max-width: 768px) {
+    .container {
+      width: calc(100% - 56px);
+      max-width: none;
+      margin: 0 auto;
+    }
+    &__title-icon {
+      width: 40px;
+      height: 40px;
     }
   }
-
-  // Alternating the colors of the cards
-  &__item {
-    background-color: $blue-light;
+}
+// ==================================================
+// БАННЕР ПРОДУКТА
+// ==================================================
+.product-banner {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background-color: #030608;
+  // ==================================================
+  // ОБЩИЕ СТИЛИ
+  // ==================================================
+  picture {
+    display: block;
+    width: 100%;
+  }
+  &__background {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__logo {
+    position: absolute;
+    z-index: 2;
+    height: auto;
+    object-fit: contain;
+  }
+  &__content {
+    position: absolute;
+    z-index: 2;
+  }
+  &__title {
+    margin: 0 0 8px;
     color: $white;
-    grid-column: span 2;
-
-    @media (min-width: 1025px) {
-      &:nth-child(4n-3), &:nth-child(4n) {
-        background-color: $white;
-        color: $black;
-        grid-column: span 1;
-      }
-       &:nth-child(5) {
-       background-color: $blue-light;
-       color: $white !important;
-       grid-column: 1 / -1;
-       }
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+  &__description {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+  &__note {
+    margin: clamp(6px, 2cqw, 20px) 0 0;
+    color: #f39a32;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+  // Белая подпись есть только у Operion на mobile
+  &__extra {
+    display: none;
+  }
+  // ==================================================
+  // ЕДИНЫЕ DESKTOP-ШРИФТЫ
+  // ==================================================
+  &__title--operion,
+  &__title--craneware,
+  &__title--boardtrix {
+    font-size: clamp(24px, 9cqw, 150px);
+  }
+  &__description--operion,
+  &__description--craneware,
+  &__description--boardtrix {
+    font-size: clamp(9px, 2.2cqw, 80px);
+  }
+  &__note--operion,
+  &__note--craneware,
+  &__note--boardtrix {
+    font-size: clamp(5px, 1.5cqw, 18px);
+  }
+  // ==================================================
+  // OPERION — DESKTOP
+  // ==================================================
+  &__logo--operion {
+    top: 50%;
+    left: 5%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+  &__content--operion {
+    top: 50%;
+    right: 4%;
+    width: 38%;
+    text-align: right;
+    transform: translateY(-50%);
+  }
+  &__title--operion {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    white-space: nowrap;
+  }
+  &__description--operion {
+    color: $blue-light;
+  }
+  &__note--operion {
+    margin-top: clamp(5px, 0.8cqw, 10px);
+  }
+  // ==================================================
+  // CRANEWARE — DESKTOP
+  // ==================================================
+  &__logo--craneware {
+    top: 50%;
+    right: 3%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+  &__content--craneware {
+    top: 60%;
+    left: 3%;
+    width: 50%;
+    text-align: left;
+    transform: translateY(-50%);
+  }
+  &__title--craneware {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    white-space: nowrap;
+  }
+  &__description--craneware {
+    color: $blue-light;
+    text-align: left;
+  }
+  &__note--craneware {
+    text-align: left;
+  }
+  // ==================================================
+  // BOARDTRIX — DESKTOP
+  // ==================================================
+  &__logo--boardtrix {
+    top: 50%;
+    left: 5%;
+    width: clamp(70px, 16cqw, 230px);
+    transform: translateY(-50%);
+  }
+  &__content--boardtrix {
+    top: 50%;
+    right: 3%;
+    width: 43%;
+    text-align: right;
+    transform: translateY(-50%);
+  }
+  &__title--boardtrix {
+    margin-bottom: clamp(4px, 1cqw, 10px);
+    white-space: nowrap;
+  }
+  &__description--boardtrix {
+    color: #079ec1;
+  }
+  // ==================================================
+  // MOBILE
+  // ==================================================
+  @media (max-width: 768px) {
+    // ==================================================
+    // РАЗМЕРЫ МОБИЛЬНЫХ БАННЕРОВ
+    // ==================================================
+    &--operion,
+    &--craneware {
+      aspect-ratio: 374 / 330;
     }
-    @media (max-width: 1024px) {
-      &:nth-child(odd) {
-        background-color: $white;
-        color: $black;
-      }
+    &--boardtrix {
+      aspect-ratio: 374 / 340;
+    }
+    // ==================================================
+    // МОБИЛЬНЫЙ ФОН
+    // ==================================================
+    picture {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &__background {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    // ==================================================
+    // ОБЩИЕ MOBILE-ЭЛЕМЕНТЫ
+    // ==================================================
+    &__logo {
+      position: absolute;
+      z-index: 2;
+      height: auto;
+      object-fit: contain;
+      transform: none;
+    }
+    &__content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transform: none;
+    }
+    // ==================================================
+    // ЕДИНАЯ MOBILE-ТИПОГРАФИКА
+    &__title--operion,
+    &__title--craneware,
+    &__title--boardtrix {
+      position: absolute;
+      margin: 0;
+      font-size: 11.90cqw;
+      font-weight: 790;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    &__description--operion,
+    &__description--craneware,
+    &__description--boardtrix {
+      position: absolute;
+      margin: 0;
+      font-size: 3.74cqw;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    &__note--operion,
+    &__note--craneware,
+    &__note--boardtrix {
+      position: absolute;
+      margin: 0;
+      font-size: 3.21cqw;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    // ==================================================
+    // OPERION — MOBILE
+    &__logo--operion {
+      top: 3cqw;
+      left: 3cqw;
+      right: auto;
+      width: 27.50cqw;
+      transform: none;
+    }
+    &__content--operion {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+    &__title--operion {
+      top: 33.16cqw;
+      left: 3cqw;
+      width: 61.50cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--operion {
+      top: 50.27cqw;
+      left: 3cqw;
+      width: 50.27cqw;
+      color: $blue-light;
+      text-align: left;
+    }
+    &__note--operion {
+      top: 67.11cqw;
+      left: 3cqw;
+      width: 63.90cqw;
+      color: #f39a32;
+      text-align: left;
+    }
+    &__extra--operion {
+      position: absolute;
+      top: 76.47cqw;
+      left: 3cqw;
+      z-index: 2;
+      display: block;
+      width: 93.58cqw;
+      margin: 0;
+      color: $white;
+      font-size: 3.48cqw;
+      font-weight: 600;
+      line-height: 1;
+      text-align: left;
+    }
+    // CRANEWARE — MOBILE
+    &__logo--craneware {
+      top: 1.60cqw;
+      left: 1.60cqw;
+      right: auto;
+      width: 29.95cqw;
+      transform: none;
+    }
+    &__content--craneware {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+    &__title--craneware {
+      top: 38cqw;
+      left: 2.14cqw;
+      width: 71.93cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--craneware {
+      top: 53.08cqw;
+      left: 2.14cqw;
+      width: 60%;
+      color: $blue-light;
+      text-align: left;
+    }
+    &__note--craneware {
+      top: 68.93cqw;
+      left: 2.14cqw;
+      width: 70%;
+      color: #f39a32;
+      text-align: left;
+    }
+    // ==================================================
+    // BOARDTRIX — MOBILE
+    &__logo--boardtrix {
+      top: 3cqw;
+      left: 3cqw;
+      right: auto;
+      width: 27.46cqw;
+      transform: none;
+    }
+    &__content--boardtrix {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+    &__title--boardtrix {
+      top: 3cqw;
+      left: 33.69cqw;
+      width: 64.44cqw;
+      color: $white;
+      white-space: nowrap;
+    }
+    &__description--boardtrix {
+      top: 18.18cqw;
+      left: 34.49cqw;
+      width: 40.91cqw;
+      color: #079ec1;
+      text-align: left;
+    }
+    &__note--boardtrix {
+      top: 34.76cqw;
+      left: 3.48cqw;
+      width: 80.21cqw;
+      color: #f39a32;
+      text-align: left;
+    }
+  }
+}
+// ==================================================
+// КАРТОЧКА ПРОДУКТА
+// ==================================================
+.product-card {
+  width: 100%;
+  margin-bottom: 25px;
+}
+// ==================================================
+// КНОПКИ ПОД БАННЕРАМИ
+// ==================================================
+.product-actions {
+  display: grid;
+  container-type: inline-size;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+  &--operion {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  &--craneware {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  &--boardtrix {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (max-width: 768px) {
+    gap: 8px;
+    &--operion,
+    &--craneware,
+    &--boardtrix {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+// ==================================================
+// ОДНА КНОПКА
+// ==================================================
+.product-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  min-height: 60px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 3px;
+  background-color: $blue-light;
+  color: $white;
+  font: inherit;
+  font-size: clamp(10px, 1.4cqw, 15px);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  // ==================================================
+  // HOVER
+  // ==================================================
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: #f39a32;
+      color: $white;
+      box-shadow: 0 4px 12px rgba($black, 0.18);
+    }
+  }
+  // ==================================================
+  // ACTIVE
+  // ==================================================
+  &:active {
+    background-color: #079ec1;
+    color: $white;
+    box-shadow: none;
+  }
+  // ==================================================
+  // DISABLED
+  // ==================================================
+  &--disabled {
+    position: relative;
+    background-color: #7b8491;
+    color: rgba($white, 0.8);
+    cursor: not-allowed;
+    opacity: 0.75;
+    user-select: none;
+    &:hover {
+      color: rgba($white, 0.8);
+      filter: none;
+      transform: none;
+    }
+    &:active {
+      background-color: #7b8491;
+      color: rgba($white, 0.8);
+      box-shadow: none;
+      filter: none;
+      transform: none;
+    }
+    &::before {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      z-index: 10;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background-color: #11151c;
+      color: $white;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: none;
+      white-space: nowrap;
+      content: attr(data-tooltip);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 4px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+    &::after {
+      position: absolute;
+      bottom: calc(100% + 3px);
+      left: 50%;
+      z-index: 9;
+      width: 8px;
+      height: 8px;
+      background-color: #11151c;
+      content: "";
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) rotate(45deg);
+      transition: opacity 0.2s ease;
+    }
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+    }
+    &:hover::before {
+      transform: translate(-50%, 0);
+    }
+  }
+  // ==================================================
+  // ИКОНКА
+  // ==================================================
+  &__icon {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    object-fit: contain;
+  }
+  // ==================================================
+  // ТЕКСТ
+  // ==================================================
+  &__text {
+    display: block;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  // ==================================================
+  // MOBILE
+  // ==================================================
+  @media (max-width: 768px) {
+    min-height: 52px;
+    padding: 8px 10px;
+    font-size: clamp(14px, 5.35cqw, 20px);
+    font-weight: 800;
+    line-height: 1;
+    &__icon {
+      flex-basis: 18px;
+      width: 18px;
+      min-width: 18px;
+      max-width: 18px;
+      height: 18px;
+      min-height: 18px;
+      max-height: 18px;
     }
   }
 }

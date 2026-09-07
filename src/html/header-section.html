@@ -1,43 +1,48 @@
-<section class="first-screen light-section" id="first-screen">
-  <div class="container sticky-container">
-    <div class="first-screen__spacer"> </div>
-    <nav class="first-screen-body">
-      <div class="first-screen-menu-logo"><a href="#first-screen"><img src="/img/sa-logo.svg" /></a></div>
-      <div class="first-screen-body__item ">
-        <div class="first-screen-list__item__side"> 
-          <div class="first-screen-menu-logo-icon"><a href="#first-screen"></a></div>
-        </div>
-        <ul class="first-screen-list">
-          <li class="first-screen-list__item">
-            <a href="@@indexRoute#about" class="first-screen-list__link">О нас</a>
-          </li>
-          <li class="first-screen-list__item">
-            <a href="@@indexRoute#activities" class="first-screen-list__link">Направления</a>
-          </li>
-          <li class="first-screen-list__item">
-            <a href="@@indexRoute#projects" class="first-screen-list__link">Продукты</a>
-          </li>
-          <li class="first-screen-list__item">
-            <a href="@@careersRoute#careers" class="first-screen-list__link">Вакансии</a>
-          </li>
-          <li class="first-screen-list__item">
-            <a href="@@contactsRoute#contacts" class="first-screen-list__link">Контакты</a>
-          </li>
-        </ul>
-        <div class="first-screen-list__item__side">
-          <div class="first-screen-menu-logo-icon"><a href="#first-screen"><img src="/img/sa-logo.svg" /></a></div>
-        </div>
+<section class="first-screen start-video" id="first-screen">
+  <!-- ФОНОВОЕ ВИДЕО -->
+  <video class="start-video__background" id="startVideo" poster="../img/start/start-video-poster.png" autoplay muted loop playsinline webkit-playsinline preload="auto">
+    <source src="../video/start_video.mp4" type="video/mp4">
+  </video>
+  <!-- КОНТЕНТ ПОВЕРХ ВИДЕО -->
+  <div class="start-video__overlay">
+    <!-- ЛОГО + ТЕКСТ -->
+    <div class="start-video__brand">
+      <img class="start-video__logo" src="../img/sa-logo.svg" alt="S&A lab">
+      <div class="start-video__brand-text">
+        РАЗРАБОТКА ПРОГРАММНОГО<br>
+        ОБЕСПЕЧЕНИЯ ДЛЯ МОРСКОЙ<br>
+        ТЕХНИКИ НА ЗАКАЗ<br>
       </div>
+    </div>
+    <!-- МЕНЮ -->
+    <nav class="start-video__menu">
+      <a href="@@indexRoute#about">
+        О КОМПАНИИ
+      </a>
+      <a href="@@indexRoute#activities">
+        РАЗРАБОТКИ
+      </a>
+      <a href="@@indexRoute#projects">
+        ПРОДУКТЫ
+      </a>
+      <a href="@@careersRoute#careers">
+        ВАКАНСИИ
+      </a>
+      <a href="@@contactsRoute#contacts">
+        КОНТАКТЫ
+      </a>
     </nav>
-    <div class="first-screen__spacer"> </div>
-  </div>
-  <div class="first-screen__theses">
-    <ul>
-      Разработка ПО
-      <li>для судостроения</li>
-      <li>для морской техники</li>
-      <li>на заказ</li>
-      <a class="first-screen__contact-us" href="mailto:info@sa-lab.dev?subject=Запрос цены на разработку ПО&body=Опишите Ваши потребности в ПО: какую задачу решаете, каких целей с помощью него хотите достичь?">Узнать цену</a>
-    </ul>
+    <!-- ШКАЛА + БЕГУНОК -->
+    <div class="start-video__progress">
+      <div class="start-video__scale">
+        <img class="start-video__scale-image" src="../img/start/scale.svg" alt="">
+        <img class="start-video__arrow" id="startVideoArrow" src="../img/start/arrow.svg" alt="">
+      </div>
+    </div>
   </div>
 </section>
+@@include('header-project.html', {
+  "indexRoute": "index.html",
+  "careersRoute": "careers.html",
+  "contactsRoute": "contacts.html"
+})
