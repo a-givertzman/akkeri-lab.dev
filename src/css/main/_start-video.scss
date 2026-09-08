@@ -47,28 +47,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(25px, 3vw, 55px);
-    width: min(70%, 900px);
+    margin-left: 30px;
+    width: min(900px, 90%);
   }
   &__logo {
     display: block;
-    width: clamp(220px, 25vw, 420px);
-    height: auto;
+    flex: 0 0 400px;
+    width: 400px;
+    object-fit: contain;
   }
   &__brand-text {
+    width: 500px;
+    margin-left: -20px;
     color: $blue-light;
-    font-size: clamp(20px, 2.2vw, 38px);
-    font-weight: 700;
-    line-height: 1.08;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
     text-align: left;
-  }
-  @media (min-width: 769px) {
-    &__logo {
-      transform: translateX(65px);
-    }
-    &__brand-text {
-      transform: translateX(-10px);
-    }
   }
   // =========================
   // МЕНЮ
@@ -76,13 +72,14 @@
   &__menu {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: clamp(20px, 2.3vw, 42px);
+    justify-content: space-between;
+    gap: 0;
+    width: min(728px, 90%);
     margin-top: clamp(35px, 5vh, 70px);
     a {
       color: $white;
-      font-size: clamp(11px, 1vw, 16px);
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 500;
       text-decoration: none;
       white-space: nowrap;
       transition: color 0.2s ease;
@@ -97,8 +94,8 @@
   // ШКАЛА + БЕГУНОК
   // =========================
   &__progress {
-    width: min(52%, 680px);
-    margin-top: 18px;
+    width: min(90%, 728px);
+    margin-top: 30px;
   }
   &__scale {
     position: relative;
@@ -134,22 +131,35 @@
       pointer-events: none;
     }
     &__overlay {
-      transform: translateY(-44px);
+      transform: none;
+      justify-content: flex-start;
+      padding: 20px 0 110px 0;
     }
     &__brand {
       flex-direction: column;
-      width: 85%;
+      align-items: center;
+      width: 100%;
+      gap: 0;
+      margin-left: 0;
+      transform: none;
     }
     &__logo {
-      width: min(85vw, 300px);
+      display: block;
+      flex: 0 0 auto;
+      width: 400px;
+      max-width: calc(100vw - 70px);
+      height: auto;
+      margin: 0 auto;
     }
     &__brand-text {
+      width: 370px;
+      max-width: calc(100vw - 64px);
+      margin: -45px auto 0;
       color: $blue-light;
-      margin: -65px 0 0;
-      font-size: clamp(15px, 5vw, 22px);
-      font-weight: 600;
-      line-height: 1.12;
-      letter-spacing: 0.01em;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: 0;
       text-align: center;
     }
     &__menu {
@@ -157,21 +167,22 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 26px;
-      margin-top: 18px;
+      gap: 30px;
+      margin-top: 84px;
       a {
         color: $white;
-        font-size: clamp(16px, 5.5vw, 40px);
-        font-weight: 600;
-        line-height: 1.5;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.1;
         text-align: center;
         text-decoration: none;
         white-space: nowrap;
       }
     }
     &__progress {
-      margin-top: 22px;
-      width: 75%;
+      width: 318px;
+      max-width: calc(100vw - 114px);
+      margin-top: auto;
     }
     &__arrow {
       bottom: -10px;
