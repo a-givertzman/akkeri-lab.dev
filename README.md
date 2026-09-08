@@ -2,6 +2,12 @@
 
 Our site sources
 
+## Requirements
+
+- Node.js: 20.17.0
+- Gulp CLI: 3.0.0
+- Gulp: 5.0.0
+
 ## How to update the project
 
 Please follow the steps to update site content
