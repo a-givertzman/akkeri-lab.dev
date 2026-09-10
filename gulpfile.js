@@ -9,6 +9,7 @@ import fileInclude from 'gulp-file-include'
 import uglify from 'gulp-uglify'
 import notify from 'gulp-notify'
 import cachebust from 'gulp-cache-bust'
+import cache from 'gulp-cache'
 
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
@@ -103,7 +104,7 @@ export const dev = series(
 )
 const imagesBuild = () => {
   return src(['src/img/**/*.*'], { encoding: false })
-    .pipe(image())
+    .pipe(cache(image()))
     .pipe(dest('docs/img'))
 }
 
@@ -134,6 +135,14 @@ const styleBuild = () => {
     )
     .pipe(dest('docs/css'))
 }
+const htmlBuild = () => {
+  return src(['src/**/*.html'])
+    .pipe(fileInclude())
+    .pipe(cachebust({
+      type: 'timestamp',
+    }))
+    .pipe(dest('docs'))
+}
 const htmlMinifyBuild = () => {
   return src('docs/**/*.html')
     .pipe(
@@ -153,6 +162,11 @@ const scriptsBuild = () => {
     )
     .pipe(dest('docs/js'))
 }
+const exitBuild = (done) => {
+  done(); // Сигнализируем Gulp об успешном завершении
+  process.exit(0); // Возвращаемся в консоль без ошибок
+};
+
 export const build = series(
   clean,
   scriptsBuild,
@@ -161,6 +175,7 @@ export const build = series(
   imagesBuild,
   filesBuild,
   videoBuild,
-  htmlDev,
-  htmlMinifyBuild
+  htmlBuild,
+  htmlMinifyBuild,
+  exitBuild,
 )
