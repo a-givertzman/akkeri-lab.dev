@@ -8,6 +8,7 @@ import image from 'gulp-image'
 import fileInclude from 'gulp-file-include'
 import uglify from 'gulp-uglify'
 import notify from 'gulp-notify'
+import cachebust from 'gulp-cache-bust'
 
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
@@ -77,6 +78,9 @@ const watchFilesDev = () => {
 const htmlDev = () => {
   return src(['src/**/*.html'])
     .pipe(fileInclude())
+    .pipe(cachebust({
+      type: 'timestamp',
+    }))
     .pipe(dest('docs'))
     .pipe(browserSync.reload({ stream: true }));
 }
