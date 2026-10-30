@@ -120,7 +120,8 @@
   // МОБИЛЬНАЯ ВЕРСИЯ
   // =========================
   @media (max-width: 768px) {
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 0;
     &__background {
       position: absolute;
       inset: 0;
@@ -131,11 +132,14 @@
       pointer-events: none;
     }
     &__overlay {
-      transform: none;
-      justify-content: flex-start;
-      padding: 20px 0 110px 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      justify-items: center;
+      box-sizing: border-box;
+      padding: 14px 0 30px;
     }
     &__brand {
+      align-self: start;
       flex-direction: column;
       align-items: center;
       width: 100%;
@@ -146,15 +150,14 @@
     &__logo {
       display: block;
       flex: 0 0 auto;
-      width: 400px;
-      max-width: calc(100vw - 70px);
+      width: min(360px, calc(100vw - 70px));
       height: auto;
       margin: 0 auto;
     }
     &__brand-text {
       width: 370px;
       max-width: calc(100vw - 64px);
-      margin: -45px auto 0;
+      margin: -30px auto 0;
       color: $blue-light;
       font-size: 22px;
       font-weight: 500;
@@ -163,16 +166,17 @@
       text-align: center;
     }
     &__menu {
+      align-self: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 30px;
-      margin-top: 84px;
+      gap: 24px;
+      margin-top: 0;
       a {
         color: $white;
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1.1;
         text-align: center;
         text-decoration: none;
@@ -180,25 +184,37 @@
       }
     }
     &__progress {
+      align-self: end;
       width: 318px;
       max-width: calc(100vw - 114px);
-      margin-top: auto;
+      margin-top: 0;
     }
     &__arrow {
+      top: auto;
       bottom: -10px;
       width: 12px;
     }
   }
-}
-#about,
-#activities,
-#projects {
-  scroll-margin-top: 80px;
-}
-@media (max-width: 768px) {
-  #about,
-  #activities,
-  #projects {
-    scroll-margin-top: 65px;
+  // =========================
+  // НИЗКИЕ МОБИЛЬНЫЕ ЭКРАНЫ
+  // =========================
+  @media (max-width: 768px) and (max-height: 720px) {
+    &__overlay {
+      padding: 8px 0 14px;
+    }
+    &__logo {
+      width: min(280px, calc(100vw - 90px));
+    }
+    &__brand-text {
+      margin: -20px auto 0;
+    }
+    &__menu {
+      gap: 12px;
+    }
+    &__progress {
+      width: 280px;
+      max-width: calc(100vw - 95px);
+      transform: translateY(-45px);
+    }
   }
 }
